@@ -1,4 +1,6 @@
+using FrostFlow.Entities;
 using FrostFlow.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -12,10 +14,18 @@ namespace FrostFlow.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult Login()
         {
             return View();
         }
 
+
+
+        [HttpPost]
+        public IActionResult Login(UsuarioEnt entidad)
+        {
+            return RedirectToAction("PantallaPrincipal", "Home");
+        }
     }
 }
