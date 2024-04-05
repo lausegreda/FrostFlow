@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout_Externo.cshtml";
+}
+
+
+<div class="d-flex p-2">
+    <div class="card-body">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="authincation-content">
+                    <div class="row no-gutters">
+                        <div class="col-xl-12">
+                            <div class="auth-form">
+                                <h4 class="text-center mb-4">Iniciar Sesión</h4>
+                                <form action="index.html">
+                                    <div class="form-group">
+                                        <label><strong>Usuario</strong></label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label><strong>Contraseña</strong></label>
+                                        <input type="password" class="form-control">
+                                    </div>
+                                    <div class="form-row d-flex justify-content-between mt-4 mb-2">
+                                        <div class="form-group">
+                                            <a href="page-forgot-password.html">¿Olvidó la contraseña?</a>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
