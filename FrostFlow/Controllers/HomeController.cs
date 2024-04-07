@@ -20,10 +20,32 @@ namespace FrostFlow.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult ForgotPassword()
+        {
+            return View();
+        }
 
+        [HttpGet]
+        public IActionResult Calendario()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult TecnicoRegistro()
+        {
+            return View();
+        }
 
         [HttpPost]
         public IActionResult Login(UsuarioEnt entidad)
+        {
+            return RedirectToAction("PantallaPrincipal", "Home");
+        }
+
+        [HttpPost]
+        public IActionResult TecnicoRegistro(UsuarioEnt entidad)
         {
             return RedirectToAction("PantallaPrincipal", "Home");
         }

@@ -16,7 +16,7 @@
 
 
                                 @using (Html.BeginForm("PantallaPrincipal", "Home", FormMethod.Post))
-                                {
+                                    {
                                     <div class="form-group">
                                         <label><strong>Usuario</strong></label>
                                         <input type="text" class="form-control">
@@ -25,15 +25,13 @@
                                         <label><strong>Contraseña</strong></label>
                                         <input type="password" class="form-control">
                                     </div>
-                                    <div class="form-row d-flex justify-content-between mt-4 mb-2">
-                                        <div class="form-group">
-                                            <a href="page-forgot-password.html">¿Olvidó la contraseña?</a>
-                                        </div>
-                                    </div>
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
                                     </div>
-                                   }
+                                    }
+                                <div class="new-account mt-3">
+                                    <p><a href="@Url.Action("ForgotPassword", "Home")" class="text-primary">¿Olvidó la contraseña?</a></p>
+                                </div>
                                 </div>
                             </div>
                         </div>
