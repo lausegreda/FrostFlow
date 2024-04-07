@@ -5,12 +5,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>FrostFlow </title>
+    <title>FrostFlow</title>
 
     <link rel="icon" type="image/png" sizes="16x16" href="~/images/favicon.png">
     <link href="=~/vendor/fullcalendar/css/fullcalendar.min.css" rel="stylesheet">
     <link href="~/css/style.css" rel="stylesheet">
 </head>
+
 <body>
     <div id="preloader">
         <div class="sk-three-bounce">
@@ -57,15 +58,15 @@
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a href="./app-profile.html" class="dropdown-item">
                                         <i class="icon-user"></i>
-                                        <span class="ml-2">Profile </span>
+                                        <span class="ml-2">Perfil</span>
                                     </a>
                                     <a href="./email-inbox.html" class="dropdown-item">
                                         <i class="icon-envelope-open"></i>
-                                        <span class="ml-2">Inbox </span>
+                                        <span class="ml-2">Bandeja de entrada</span>
                                     </a>
                                     <a href="@Url.Action("Login", "Home")" class="dropdown-item">
                                         <i class="icon-key"></i>
-                                        <span class="ml-2">Logout </span>
+                                        <span class="ml-2">Cerrar sesión</span>
                                     </a>
                                 </div>
                             </li>
@@ -78,8 +79,6 @@
             <div class="quixnav-scroll">
                 <ul class="metismenu" id="menu">
                     <li class="nav-label first">Servicios</li>
-                    <!-- <li><a href="index.html"><i class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
-                    </li> -->
                     <li>
                         <a href="widget-basic.html" aria-expanded="false">
                             <i class="icon icon-single-04"></i><span class="nav-text">Clientes</span>
@@ -92,7 +91,7 @@
                     </li>
                     <li>
                         <a href="widget-basic.html" aria-expanded="false">
-                            <i class="icon icon-single-04"></i><span class="nav-text">Ténicos</span>
+                            <i class="icon icon-single-04"></i><span class="nav-text">Técnicos</span>
                         </a>
                     </li>
 
@@ -122,7 +121,6 @@
                             <i class="icon icon-chart-bar-33"></i><span class="nav-text">Reportes</span>
                         </a>
                     </li>
-                    <li>
                 </ul>
             </div>
         </div>
@@ -130,16 +128,24 @@
             <div class="container-fluid">
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
-                            <p class="mb-0">@RenderBody()</p>
+                        <h4>¡Hola, bienvenido de nuevo!</h4>
+                        <p>Tu plantilla de panel de control empresarial</p>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">App</a></li>
+                            <li class="breadcrumb-item active">Calendario</li>
+                        </ol>
                     </div>
                 </div>
+
+                @RenderBody()
+
             </div>
         </div>
         <div class="footer">
             <div class="copyright">
-                <p>Copyright © FrostFlow Solution 2024</p>
+                <p>Derechos de autor © FrostFlow Solution 2024</p>
             </div>
         </div>
     </div>
@@ -148,6 +154,5 @@
     <script src="~/js/custom.min.js"></script>
     <script src="~/vendor/highlightjs/highlight.pack.min.js"></script>
 </body>
+
 </html>
-
-
