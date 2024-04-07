@@ -39,13 +39,13 @@ namespace FrostFlow.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(UsuarioEnt entidad)
+        public IActionResult Login(Usuario entidad)
         {
             return RedirectToAction("PantallaPrincipal", "Home");
         }
 
         [HttpPost]
-        public IActionResult TecnicoRegistro(UsuarioEnt entidad)
+        public IActionResult TecnicoRegistro(Usuario entidad)
         {
             return RedirectToAction("PantallaPrincipal", "Home");
         }
