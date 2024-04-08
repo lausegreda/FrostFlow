@@ -109,9 +109,15 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="widget-basic.html" aria-expanded="false">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon icon-form"></i><span class="nav-text">Facturación</span>
                         </a>
+                        <ul aria-expanded="false">
+                            <li><a href=@Url.Action("RegistrarFactura", "Factura")>Nueva Factura</a></li>
+                        </ul>
+                        <ul aria-expanded="false">
+                            <li><a href=@Url.Action("MantenimientoFactura", "Factura")>Mantenimientos</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="widget-basic.html" aria-expanded="false">

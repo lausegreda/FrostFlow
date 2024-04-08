@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewData["Title"] = "RegistrarFactura";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title">Nueva Factura</h4>
+    </div>
+    <div class="card-body">
+        <div class="basic-form">
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Cliente</label>
+                        <input type="text" class="form-control" placeholder="Empresa XYZ S.A.">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Fecha</label>
+                        <input type="date" class="form-control">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Email</label>
+                        <input type="email" class="form-control" placeholder="Correo">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Dirección</label>
+                        <input type="text" class="form-control" placeholder="Dirección de Cliente">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Teléfonos</label>
+                        <input type="text" class="form-control" placeholder="Teléfonos de Cliente">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Moneda</label>
+                        <select id="inputState" class="form-control">
+                            <option selected>Seleccione</option>
+                            <option>¢</option>
+                            <option>$</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="card-header">
+        Detalle de la Factura
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Producto / Servicio</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Precio Unitario</th>
+                    <th scope="col">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" class="form-control" placeholder="Nombre del producto / servicio"></td>
+                    <td><input type="number" class="form-control" placeholder="Cantidad"></td>
+                    <td><input type="number" class="form-control" placeholder="Precio Unitario"></td>
+                    <td><input type="number" class="form-control" placeholder="Total" disabled></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="form-control" placeholder="Nombre del producto / servicio"></td>
+                    <td><input type="number" class="form-control" placeholder="Cantidad"></td>
+                    <td><input type="number" class="form-control" placeholder="Precio Unitario"></td>
+                    <td><input type="number" class="form-control" placeholder="Total" disabled></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="col-sm-13">
+            <button class="btn btn-primary float-right">Facturar</button>
+            <button class="btn btn-primary float-left">Agregar Línea</button>
+        </div>
+    </div>
+</div>
+

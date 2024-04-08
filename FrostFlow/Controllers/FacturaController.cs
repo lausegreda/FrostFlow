@@ -2,19 +2,19 @@
 
 namespace FrostFlow.Controllers
 {
-    public class CotizacionController : Controller
+    public class FacturaController : Controller
     {
         [HttpGet]
-        public IActionResult RegistrarCotizacion()
+        public IActionResult RegistrarFactura()
         {
             return View();
         }
 
         [HttpGet]
-        public IActionResult MantenimientoCotizacion()
+        public IActionResult MantenimientoFactura()
         {
             return View();
-        
+
         }
     }
 }
