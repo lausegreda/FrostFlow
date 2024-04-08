@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "RegistrarProducto";
+}
+
+<div class="container">
+    <h1 class="mt-4 mb-4">Gestión de Órdenes de Trabajo</h1>
+    <!-- Formulario para Crear una Nueva Orden de Trabajo -->
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Nueva Orden de Trabajo</h4>
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label for="inputDescripcion">Descripción de la Tarea</label>
+                    <input type="text" class="form-control" id="inputDescripcion" placeholder="Descripción">
+                </div>
+                <div class="form-group">
+                    <label for="inputRecursos">Recursos Necesarios</label>
+                    <input type="text" class="form-control" id="inputRecursos" placeholder="Recursos necesarios">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputFechaInicio">Fecha de Inicio</label>
+                        <input type="date" class="form-control" id="inputFechaInicio">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputFechaEntrega">Fecha de Entrega</label>
+                        <input type="date" class="form-control" id="inputFechaEntrega">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Crear Orden de Trabajo</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Lista de Órdenes de Trabajo -->
+    <div class="card mt-4">
+        <div class="card-header">
+            <h4 class="card-title">Órdenes de Trabajo</h4>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Descripción</th>
+                        <th>Recursos</th>
+                        <th>Fecha de Inicio</th>
+                        <th>Fecha de Entrega</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se listarán las órdenes de trabajo -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

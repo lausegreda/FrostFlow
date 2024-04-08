@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "Informes";
+}
+
+<div class="container">
+    <h1 class="mt-4 mb-4">Registro de Recepción de Productos</h1>
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Información del Producto</h4>
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputNombreProducto">Nombre del Producto</label>
+                        <input type="text" class="form-control" id="inputNombreProducto" placeholder="Nombre del producto">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputCantidad">Cantidad Recibida</label>
+                        <input type="number" class="form-control" id="inputCantidad" placeholder="Cantidad recibida">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputFechaRecepcion">Fecha de Recepción</label>
+                        <input type="date" class="form-control" id="inputFechaRecepcion">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputProveedor">Proveedor</label>
+                        <input type="text" class="form-control" id="inputProveedor" placeholder="Proveedor">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputEstadoProducto">Estado del Producto</label>
+                        <select id="inputEstadoProducto" class="form-control">
+                            <option value="">Seleccione</option>
+                            <option value="nuevo">Nuevo</option>
+                            <option value="usado">Usado</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary">Registrar Recepción</button>
+        </div>
+    </div>
+
+    <!-- Informe de Recepción de Productos -->
+    <div class="card mt-4">
+        <div class="card-header">
+            <h4 class="card-title">Informe de Recepción de Productos</h4>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nombre del Producto</th>
+                        <th>Cantidad Recibida</th>
+                        <th>Fecha de Recepción</th>
+                        <th>Proveedor</th>
+                        <th>Estado del Producto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se mostrarán los registros de recepción de productos -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

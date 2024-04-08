@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "TecnicoOT";
+}
+
+<div class="container">
+    <h1 class="mt-4 mb-4">Actualizar Estado de Tareas</h1>
+
+    <!-- Lista de Tareas Asignadas -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h4 class="card-title">Tareas Asignadas</h4>
+        </div>
+        <div class="card-body">
+            <!-- Aquí iría la lista de tareas asignadas al técnico -->
+        </div>
+    </div>
+
+    <!-- Formulario de Actualización de Estado -->
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Actualizar Estado</h4>
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label for="inputTarea">Tarea</label>
+                    <select class="form-control" id="inputTarea">
+                        <!-- Opciones de tareas asignadas al técnico -->
+                        <option value="1">Tarea 1</option>
+                        <option value="2">Tarea 2</option>
+                        <option value="3">Tarea 3</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="inputEstado">Estado</label>
+                    <select class="form-control" id="inputEstado">
+                        <!-- Opciones de estados -->
+                        <option value="completada">Completada</option>
+                        <option value="pendiente">Pendiente</option>
+                        <option value="problema">Problema</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="inputComentarios">Comentarios</label>
+                    <textarea class="form-control" id="inputComentarios" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Actualizar Estado</button>
+            </form>
+        </div>
+    </div>
+</div>

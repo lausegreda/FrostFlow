@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "RegistrarProducto";
+}
+
+<div class="container">
+    <h1 class="mt-4 mb-4">Registro de Productos</h1>
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Información del Producto</h4>
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputNombreProducto">Nombre del Producto</label>
+                        <input type="text" class="form-control" id="inputNombreProducto" placeholder="Nombre del producto">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputCategoria">Categoría</label>
+                        <input type="text" class="form-control" id="inputCategoria" placeholder="Categoría del producto">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPrecio">Precio</label>
+                        <input type="number" class="form-control" id="inputPrecio" placeholder="Precio del producto">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputCantidad">Cantidad</label>
+                        <input type="number" class="form-control" id="inputCantidad" placeholder="Cantidad en inventario">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary">Registrar Producto</button>
+        </div>
+    </div>
+</div>
