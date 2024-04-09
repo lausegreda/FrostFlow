@@ -15,8 +15,14 @@
             <div class="col-sm-6 p-md-0">
                 <div class="welcome-text">
                     <h4>Calendario</h4>
-                    <p class="mb-0">Your business dashboard template</p>
+                    <p class="mb-0">Registro de evntos</p>
                 </div>
+            </div>
+            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript:void(0)"></a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)"></a></li>
+                </ol>
             </div>
         </div>
         <!-- row -->
@@ -30,21 +36,22 @@
 
                         <div class="">
                             <div id="external-events" class="my-3">
-                                <p>Drag and drop your event or click in the calendar</p>
-                                <div class="external-event" data-class="bg-primary"><i class="fa fa-move"></i>Cita Nueva</div>
+                                <p>Entradas en el calendario de trabajo</p>
+                                <div class="external-event" data-class="bg-primary"><i class="fa fa-move"></i>Nueva Cita</div>
                                 <div class="external-event" data-class="bg-success">
-                                    <i class="fa fa-move"></i>My Event
+                                    <i class="fa fa-move"></i>Mantenimiento de equipos
                                 </div>
-                                <div class="external-event" data-class="bg-warning"><i class="fa fa-move"></i>Mantenimineto Diego</div>
-                                <div class="external-event" data-class="bg-dark"><i class="fa fa-move"></i>Visita de Proveedor</div>
+                                <div class="external-event" data-class="bg-warning"><i class="fa fa-move"></i>Matenimiento de equipos</div>
+                                <div class="external-event" data-class="bg-dark"><i class="fa fa-move"></i>Visita de inspección</div>
                             </div>
                             <!-- checkbox -->
                             <div class="checkbox checkbox-event pt-3 pb-5">
-                                <input id="drop-remove" class="styled-checkbox" type="Carreo de Inventario">
-                                <label class="ml-2 mb-0" for="drop-remove">Mantenimiento de equipos</label>
+                                <input id="drop-remove" class="styled-checkbox" type="checkbox">
+                                <label class="ml-2 mb-0" for="drop-remove">Remover</label>
                             </div>
                             <a href="javascript:void()" data-toggle="modal" data-target="#add-category" class="btn btn-primary btn-event w-100">
-                                <span class="align-middle"><i class="ti-plus"></i></span> Creación de nuevo evento
+                                <span class="align-middle"><i class="ti-plus"></i></span> Creción de nuevo evento
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -81,32 +88,32 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title"><strong>Add a category</strong></h4>
+                            <h4 class="modal-title"><strong>Agregar categoria</strong></h4>
                         </div>
                         <div class="modal-body">
                             <form>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label class="control-label">Category Name</label>
-                                        <input class="form-control form-white" placeholder="Enter name" type="text" name="category-name">
+                                        <label class="control-label">Nombre de la categoria</label>
+                                        <input class="form-control form-white" placeholder="Ingresa el nombre" type="text" name="category-name">
                                     </div>
                                     <div class="col-md-6">
-                                        <label class="control-label">Choose Category Color</label>
-                                        <select class="form-control form-white" data-placeholder="Choose a color..." name="category-color">
-                                            <option value="success">Success</option>
+                                        <label class="control-label">Selecciona la categoria por el color</label>
+                                        <select class="form-control form-white" data-placeholder="Elige el color..." name="category-color">
+                                            <option value="success">Guardado</option>
                                             <option value="danger">Danger</option>
                                             <option value="info">Info</option>
-                                            <option value="pink">Pink</option>
-                                            <option value="primary">Primary</option>
-                                            <option value="warning">Warning</option>
+                                            <option value="pink">Mantenimiento</option>
+                                            <option value="primary">Primera visita</option>
+                                            <option value="warning">Inspecciones</option>
                                         </select>
                                     </div>
                                 </div>
                             </form>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-danger waves-effect waves-light save-category" data-dismiss="modal">Save</button>
+                            <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-danger waves-effect waves-light save-category" data-dismiss="modal">Salvar</button>
                         </div>
                     </div>
                 </div>
