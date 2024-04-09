@@ -2,7 +2,6 @@
     ViewData["Title"] = "Calendario";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<body>
 
     <!--*******************
         Preloader start
@@ -50,7 +49,6 @@
                                         <div class="external-event" data-class="bg-primary"><i class="fa fa-move"></i>Servicio programado</div>
                                         <div class="external-event" data-class="bg-warning"><i class="fa fa-move"></i>Servicio de emergencia</div>
                                     </div>
-                                    <!-- checkbox -->
                                     <a href="javascript:void()" data-toggle="modal" data-target="#add-category" class="btn btn-primary btn-event w-100">
                                         <span class="align-middle"><i class="ti-plus"></i></span> Create New
                                     </a>
@@ -141,13 +139,17 @@
     <!-- Demo scripts -->
     <script src="./js/styleSwitcher.js"></script>
 
-
-
     <script src="./vendor/jqueryui/js/jquery-ui.min.js"></script>
     <script src="./vendor/moment/moment.min.js"></script>
 
     <script src="./vendor/fullcalendar/js/fullcalendar.min.js"></script>
     <script src="./js/plugins-init/fullcalendar-init.js"></script>
 
-</body>
+    <script>
+    $(document).ready(function () {
+        // Tu código JavaScript aquí
+        // Por ejemplo:
+        console.log("La página se ha cargado completamente");
+    });
+    </script>
 
