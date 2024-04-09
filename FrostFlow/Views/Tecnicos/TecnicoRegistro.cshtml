@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "TecnicoRegistro";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="d-flex p-2">
+    <div class="card-body">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="authincation-content">
+                    <div class="row no-gutters">
+                        <div class="col-xl-12">
+                            <div class="auth-form">
+                                <h4 class="text-center mb-4">Crear un Técnico</h4>
+
+
+                                @using (Html.BeginForm("TecnicoRegistro", "Tecnicos", FormMethod.Post))
+                                {
+                                    <div class="form-group">
+                                        <label><strong>Nombre del técnico</strong></label>
+                                        <input type="text" class="form-control" placeholder="Nombre">
+                                    </div>
+                                    <div class="form-group">
+                                        <label><strong>Email</strong></label>
+                                        <input type="email" class="form-control" placeholder="hello@example.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label><strong>Contraseña</strong></label>
+                                        <input type="password" class="form-control" value="Contraseña">
+                                    </div>
+                                    <div class="text-center mt-4">
+                                        <button type="submit" class="btn btn-primary btn-block">Crear el técnico</button>
+                                    </div>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
