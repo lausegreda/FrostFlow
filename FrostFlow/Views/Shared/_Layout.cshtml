@@ -115,9 +115,18 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="widget-basic.html" aria-expanded="false">
-                            <i class="icon icon-single-04"></i><span class="nav-text">Planilla</span>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon icon-form"></i><span class="nav-text">Planillas</span>
                         </a>
+                        <ul aria-expanded="false">
+                            <li><a href=@Url.Action("RegistrarEmpleado", "Planilla")>Registrar Nuevo Empleado</a></li>
+                        </ul>
+                        <ul aria-expanded="false">
+                            <li><a href=@Url.Action("MantenimientoEmpleado", "Planilla")>Mantenimientos Empleados</a></li>
+                        </ul>
+                        <ul aria-expanded="false">
+                            <li><a href=@Url.Action("GenerarPlanilla", "Planilla")>Generar Nueva Planilla</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
