@@ -32,7 +32,7 @@
             <div class="col-lg-3">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-intro-title">Calendar</h4>
+                        <h4 class="card-intro-title">Calendario</h4>
 
                         <div class="">
                             <div id="external-events" class="my-3">
@@ -41,16 +41,11 @@
                                 <div class="external-event" data-class="bg-success">
                                     <i class="fa fa-move"></i>Mantenimiento de equipos
                                 </div>
-                                <div class="external-event" data-class="bg-warning"><i class="fa fa-move"></i>Matenimiento de equipos</div>
                                 <div class="external-event" data-class="bg-dark"><i class="fa fa-move"></i>Visita de inspección</div>
                             </div>
                             <!-- checkbox -->
-                            <div class="checkbox checkbox-event pt-3 pb-5">
-                                <input id="drop-remove" class="styled-checkbox" type="checkbox">
-                                <label class="ml-2 mb-0" for="drop-remove">Remover</label>
-                            </div>
                             <a href="javascript:void()" data-toggle="modal" data-target="#add-category" class="btn btn-primary btn-event w-100">
-                                <span class="align-middle"><i class="ti-plus"></i></span> Creción de nuevo evento
+                                <span class="align-middle"><i class="ti-plus"></i></span> Creación de nuevo servicio
                             </a>
                         </div>
                     </div>
@@ -68,17 +63,73 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title"><strong>Add New Event</strong></h4>
+                            <h4 class="modal-title"><strong>Nuevo Servicio</strong></h4>
                         </div>
-                        <div class="modal-body"></div>
+                        <div class="container my-4">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="control-label">Nombre Servicio</label>
+                                        <input class="form-control form-white" placeholder="Servicio requerido" type="text" name="event-name">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="control-label">Escoja el tipo de servicio</label>
+                                        <select class="form-control form-white" data-placeholder="Tipo..." name="category-name">
+                                            <option value="primary">Nueva Cita</option>
+                                            <option value="success">Mantenimiento de equipos</option>
+                                            <option value="dark">Visita de inspección</option>
+                                        </select>
+                                    </div>
+                            </form>
+                            <div class="col-md-6">
+                                <label class="control-label">Técnico asignado</label>
+                                <select class="form-control form-white" data-placeholder="Técnico..." name="service-tech">
+                                    <option value="tech1">Pablo Rodriguez</option>
+                                    <option value="tech2">Laura Maria</option>
+                                    <option value="tech3">Julian Jovares</option>
+                                    <option value="tech4">Carlos Charlie</option>
+                                    <option value="tech5">Pamela Cristina</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="control-label">Hora del servicio</label>
+                                <input class="form-control form-white" placeholder="Hora" type="text" name="service-hour">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="control-label">Cliente asociado</label>
+                                <select class="form-control form-white" data-placeholder="Cliente..." name="service-client">
+                                    <option value="client1">Tiger Nixon</option>
+                                    <option value="client2">Garrett Winters</option>
+                                    <option value="client3">Ashton Cox</option>
+                                    <option value="client4">Cedric Kelly</option>
+                                    <option value="client5">Brielle Williamson</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="control-label">Cotización asociada</label>
+                                <select class="form-control form-white" data-placeholder="Cotización..." name="service-cot">
+                                    <option value="cot1">1</option>
+                                    <option value="cot2">2</option>
+                                    <option value="cot3">3</option>
+                                    <option value="cot4">4</option>
+                                    <option value="cot5">5</option>
+
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="control-label">Comentarios adicionales</label>
+                                <input class="form-control form-white" placeholder="Comentarios" type="text" name="service-comments">
+                            </div>
+                        </div>
+                        </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-success save-event waves-effect waves-light">
-                                Create
-                                event
+                            <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-success save-event waves-effect waves-light" data-dismiss="modal">
+                                Crear
+                                servicio
                             </button>
 
-                            <button type="button" class="btn btn-danger delete-event waves-effect waves-light" data-dismiss="modal">Delete</button>
+                            <button type="button" class="btn btn-danger delete-event waves-effect waves-light" data-dismiss="modal">Eliminar</button>
                         </div>
                     </div>
                 </div>
@@ -99,10 +150,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <label class="control-label">Selecciona la categoria por el color</label>
-                                        <select class="form-control form-white" data-placeholder="Elige el color..." name="category-color">
-                                            <option value="success">Guardado</option>
-                                            <option value="danger">Danger</option>
-                                            <option value="info">Info</option>
+                                        <select class="form-control form-white" data-placeholder="Elige el color..." name="category-color"
                                             <option value="pink">Mantenimiento</option>
                                             <option value="primary">Primera visita</option>
                                             <option value="warning">Inspecciones</option>
@@ -125,17 +173,7 @@
 <!--**********************************
     Content body end
 ***********************************-->
-<!--**********************************
-    Footer start
-***********************************-->
-<div class="footer">
-    <div class="copyright">
-        <p>Copyright © Designed &amp; Developed by <a href="#" target="_blank">Quixkit</a> 2019</p>
-    </div>
-</div>
-<!--**********************************
-    Footer end
-***********************************-->
+
     </div>
 <!--**********************************
     Main wrapper end
