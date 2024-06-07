@@ -1,4 +1,5 @@
-﻿@{
+﻿@model FrostFlow.Entities.Usuario
+@{
     ViewData["Title"] = "Login";
     Layout = "~/Views/Shared/_Layout_Externo.cshtml";
 }
@@ -13,21 +14,29 @@
                         <div class="col-xl-12">
                             <div class="auth-form">
                                 <h4 class="text-center mb-4">Iniciar Sesión</h4>
-
-
-                                @using (Html.BeginForm("PantallaPrincipal", "Home", FormMethod.Post))
+                                @using (Html.BeginForm("Login", "Home", FormMethod.Post))
                                     {
                                     <div class="form-group">
                                         <label><strong>Usuario</strong></label>
-                                        <input type="text" class="form-control">
+                                        @Html.TextBoxFor(m => m.nombreUsuario, new { @class = "form-control", @type = "text", @required = "true" })
                                     </div>
                                     <div class="form-group">
                                         <label><strong>Contraseña</strong></label>
-                                        <input type="password" class="form-control">
+                                        @Html.TextBoxFor(m => m.contrasenna, new { @class = "form-control", @type = "password", @required = "true" })
                                     </div>
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
                                     </div>
+
+                                    @if (ViewBag.MsjPantalla != null)
+                                    {
+                                        <div style="margin-top:10px">
+                                            <div style="text-align:left; color:red">
+                                            @ViewBag.MsjPantalla
+                                        </div>
+                                        </div>
+                                    }
+
                                     }
                                 <div class="new-account mt-3">
                                     <p><a href="@Url.Action("ForgotPassword", "Home")" class="text-primary">¿Olvidó la contraseña?</a></p>
