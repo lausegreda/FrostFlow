@@ -15,7 +15,10 @@ namespace FrostFlow.Controllers
         [HttpGet]
         public IActionResult PantallaPrincipal()
         {
-            HttpContext.Session.Clear(); //Cierra la sesión en caso de que se acceda manualmente a la vista
+            return View();
+        }
+        public IActionResult PantallaTecnico()
+        {
             return View();
         }
 
@@ -31,15 +34,31 @@ namespace FrostFlow.Controllers
             var resp = _usuarioModel.IniciarSesion(entidad);
 
             if (resp.Codigo == "1")
-            {
+            {             
+                HttpContext.Session.SetString("NombreUsuario", resp?.Dato?.nombreUsuario!);
+                HttpContext.Session.SetString("IdRol", resp?.Dato?.id_Rol.ToString()!);
+                HttpContext.Session.SetString("NombreRol", resp?.Dato?.nombreRol.ToString()!);
                 HttpContext.Session.SetString("Login", "true");
-                return RedirectToAction("PantallaPrincipal", "Home");
+
+                if (resp?.Dato?.nombreRol == "Administrador")
+                {
+                    return RedirectToAction("PantallaPrincipal", "Home");
+                }
+                return RedirectToAction("PantallaTecnico", "Home");
             }
+
             else
             {
                 ViewBag.MsjPantalla = resp.Mensaje;
                 return View();
             }
+        }
+
+        [HttpGet]
+        public IActionResult CerrarSesion()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login", "Home");
         }
 
         [HttpGet]
