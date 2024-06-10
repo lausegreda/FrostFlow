@@ -1,5 +1,6 @@
 ﻿using FrostFlow.Entities;
 using Microsoft.AspNetCore.Mvc;
+using TuProyecto.Models;
 
 namespace FrostFlow.Controllers
 {
