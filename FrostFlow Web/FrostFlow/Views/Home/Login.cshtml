@@ -17,8 +17,8 @@
                                 @using (Html.BeginForm("Login", "Home", FormMethod.Post))
                                     {
                                     <div class="form-group">
-                                        <label><strong>Usuario</strong></label>
-                                        @Html.TextBoxFor(m => m.nombreUsuario, new { @class = "form-control", @type = "text", @required = "true" })
+                                        <label><strong>Correo</strong></label>
+                                        @Html.TextBoxFor(m => m.correo, new { @class = "form-control", @type = "email", @required = "true" })
                                     </div>
                                     <div class="form-group">
                                         <label><strong>Contraseña</strong></label>

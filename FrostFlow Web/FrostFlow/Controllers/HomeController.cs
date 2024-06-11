@@ -1,4 +1,4 @@
-using FrostFlow.Entities;
+锘縰sing FrostFlow.Entities;
 using FrostFlow.Interfaces;
 using FrostFlow.Models;
 using Microsoft.AspNetCore.Identity;
@@ -7,18 +7,24 @@ using System.Diagnostics;
 
 namespace FrostFlow.Controllers
 {
-    [ResponseCache(NoStore = true, Duration = 0)] // Validaci髇 realizada para evitar que mediante la navegaci髇 entre p醙inas no se aplique el filtro personalizado
-    public class HomeController(IUsuarioModel _usuarioModel) : Controller //Inyecci髇 de dependencia
+    [ResponseCache(NoStore = true, Duration = 0)] // Validaci贸n realizada para evitar que mediante la navegaci贸n entre p谩ginas no se aplique el filtro personalizado
+    public class HomeController(IUsuarioModel _usuarioModel) : Controller //Inyecci贸n de dependencia
     {
 
-        [Seguridad] // Se le aplica filtro personalizado para que no se pueda acceder a esta vista a menos que se tenga una sesi髇 activa. (Ruta: Models/Seguridad)
+        [Seguridad] // Se le aplica filtro personalizado para que no se pueda acceder a esta vista a menos que se tenga una sesi贸n activa. (Ruta: Models/Seguridad)
         [HttpGet]
         public IActionResult PantallaPrincipal()
+
         {
+            //HttpContext.Session.Clear(); //Cierra la sesi锟絥 en caso de que se acceda manualmente a la vista
             return View();
         }
+
+        [Seguridad]
+        [HttpGet]
         public IActionResult PantallaTecnico()
         {
+            //HttpContext.Session.Clear();
             return View();
         }
 
@@ -35,16 +41,23 @@ namespace FrostFlow.Controllers
 
             if (resp.Codigo == "1")
             {             
-                HttpContext.Session.SetString("NombreUsuario", resp?.Dato?.nombreUsuario!);
-                HttpContext.Session.SetString("IdRol", resp?.Dato?.id_Rol.ToString()!);
-                HttpContext.Session.SetString("NombreRol", resp?.Dato?.nombreRol.ToString()!);
+                HttpContext.Session.SetString("Nombre", resp.Dato.nombre);
+                HttpContext.Session.SetString("Correo", resp.Dato.correo);
+                HttpContext.Session.SetString("IdRol", resp.Dato.id_Rol.ToString());
+                HttpContext.Session.SetString("NombreRol", resp.Dato.nombreRol.ToString());
                 HttpContext.Session.SetString("Login", "true");
 
-                if (resp?.Dato?.nombreRol == "Administrador")
+                if (resp.Dato.id_Rol == 1)
                 {
+                    HttpContext.Session.SetString("Login", "true");
                     return RedirectToAction("PantallaPrincipal", "Home");
                 }
-                return RedirectToAction("PantallaTecnico", "Home");
+                else
+                {
+                    HttpContext.Session.SetString("Login", "true");
+                    return RedirectToAction("PantallaTecnico", "Home");
+                }
+                
             }
 
             else
@@ -71,18 +84,6 @@ namespace FrostFlow.Controllers
         public IActionResult Calendario()
         {
             return View();
-        }
-
-        [HttpGet]
-        public IActionResult TecnicoRegistro()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult TecnicoRegistro(Usuario entidad)
-        {
-            return RedirectToAction("PantallaPrincipal", "Home");
         }
     }
 }
