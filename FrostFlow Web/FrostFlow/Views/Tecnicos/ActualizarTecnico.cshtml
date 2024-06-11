@@ -1,6 +1,6 @@
 ﻿@model FrostFlow.Entities.Usuario
 @{
-    ViewData["Title"] = "TecnicoRegistro";
+    ViewData["Title"] = "ActualizarTecnico";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -12,23 +12,32 @@
                     <div class="row no-gutters">
                         <div class="col-xl-12">
                             <div class="auth-form">
-                                <h4 class="text-center mb-4">Crear un Técnico</h4>
-                                @using (Html.BeginForm("TecnicoRegistro", "Tecnicos", FormMethod.Post))
+                                <h4 class="text-center mb-4">Actualizar Técnico</h4>
+                                @using (Html.BeginForm("ActualizarTecnico", "Tecnicos", FormMethod.Post))
                                 {
+                                    @Html.HiddenFor(m => m.id_Usuario)
+
                                     <div class="form-group">
                                         <label><strong>Nombre del técnico</strong></label>
-                                        @Html.TextBoxFor(m => m.nombre, new { @class = "form-control", @type = "text", @placeholder = "Nombre", @required = "true" })
+                                        @Html.TextBoxFor(m => m.nombre, new { @class = "form-control", @type = "text", @required = "true" })
                                     </div>
                                     <div class="form-group">
                                         <label><strong>Correo</strong></label>
-                                        @Html.TextBoxFor(m => m.correo, new { @class = "form-control", @type = "email", @placeholder = "hello@example.com", @required = "true" })
+                                        @Html.TextBoxFor(m => m.correo, new { @class = "form-control", @type = "email", @required = "true" })
                                     </div>
                                     <div class="form-group">
                                         <label><strong>Contraseña</strong></label>
-                                        @Html.TextBoxFor(m => m.contrasenna, new { @class = "form-control", @type = "password", @placeholder = "Contraseña", @required = "true" })
+                                        @Html.TextBoxFor(m => m.contrasenna, new { @class = "form-control", @type = "password", @required = "true" })
                                     </div>
+                                    @if (ViewBag.MsjPantalla != null)
+                                    {
+                                        <br>
+                                        <div class="alert alert-warning" role="alert" style="text-align:center">
+                                            @ViewBag.MsjPantalla
+                                        </div>
+                                    }
                                     <div class="text-center mt-4">
-                                        <button type="submit" class="btn btn-primary btn-block">Registrar Técnico</button>
+                                        <button type="submit" class="btn btn-primary btn-block">Actualizar Técnico</button>
                                     </div>
                                 }
                             </div>

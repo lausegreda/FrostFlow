@@ -110,5 +110,54 @@ namespace FrostFlow_API.Controllers
                 return Ok(respuesta);
             }
         }
+
+        [Route("ConsultarTecnico")]
+        [HttpGet]
+        public IActionResult ConsultarTecnico(int id_Usuario)
+        {
+            using (var db = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
+            {
+                UsuarioRespuesta respuesta = new UsuarioRespuesta();
+
+                var result = db.Query<Usuario>("ConsultarTecnico",
+                    new { id_Usuario },
+                    commandType: CommandType.StoredProcedure).FirstOrDefault();
+
+                if (result == null)
+                {
+                    respuesta.Codigo = "0";
+                    respuesta.Mensaje = "Técnico no registrado";
+                }
+                else
+                {
+                    respuesta.Dato = result;
+                }
+
+                return Ok(respuesta);
+            }
+        }
+
+
+        [Route("ActualizarTecnico")]
+        [HttpPut]
+        public IActionResult ActualizarTecnico(Usuario entidad)
+        {
+            using (var db = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
+            {
+                UsuarioRespuesta respuesta = new UsuarioRespuesta();
+
+                var result = db.Execute("ActualizarTecnico",
+                    new { entidad.id_Usuario, entidad.nombre, entidad.correo, entidad.contrasenna },
+                    commandType: CommandType.StoredProcedure);
+
+                if (result <= 0)
+                {
+                    respuesta.Codigo = "0";
+                    respuesta.Mensaje = "No se pudo actualizar el Técnico, intente nuevamente";
+                }
+
+                return Ok(respuesta);
+            }
+        }
     }
 }

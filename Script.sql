@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [FrostFlow]    Script Date: 7/6/2024 03:20:50 ******/
+/****** Object:  Database [FrostFlow]    Script Date: 11/6/2024 17:41:59 ******/
 CREATE DATABASE [FrostFlow]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -82,7 +82,7 @@ ALTER DATABASE [FrostFlow] SET QUERY_STORE (OPERATION_MODE = READ_WRITE, CLEANUP
 GO
 USE [FrostFlow]
 GO
-/****** Object:  Table [dbo].[Cliente]    Script Date: 7/6/2024 03:20:50 ******/
+/****** Object:  Table [dbo].[Cliente]    Script Date: 11/6/2024 17:41:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -99,7 +99,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Cotizacion]    Script Date: 7/6/2024 03:20:50 ******/
+/****** Object:  Table [dbo].[Cotizacion]    Script Date: 11/6/2024 17:41:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -117,7 +117,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Empleado]    Script Date: 7/6/2024 03:20:50 ******/
+/****** Object:  Table [dbo].[Empleado]    Script Date: 11/6/2024 17:41:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -133,7 +133,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Factura]    Script Date: 7/6/2024 03:20:50 ******/
+/****** Object:  Table [dbo].[Factura]    Script Date: 11/6/2024 17:41:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -151,7 +151,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[OrdenTrabajo]    Script Date: 7/6/2024 03:20:50 ******/
+/****** Object:  Table [dbo].[OrdenTrabajo]    Script Date: 11/6/2024 17:41:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -169,7 +169,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Producto]    Script Date: 7/6/2024 03:20:50 ******/
+/****** Object:  Table [dbo].[Producto]    Script Date: 11/6/2024 17:41:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -184,7 +184,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Rol]    Script Date: 7/6/2024 03:20:50 ******/
+/****** Object:  Table [dbo].[Rol]    Script Date: 11/6/2024 17:41:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -198,15 +198,17 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Usuario]    Script Date: 7/6/2024 03:20:50 ******/
+/****** Object:  Table [dbo].[Usuario]    Script Date: 11/6/2024 17:41:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Usuario](
 	[id_Usuario] [int] IDENTITY(1,1) NOT NULL,
-	[nombreUsuario] [varchar](100) NULL,
+	[nombre] [varchar](100) NULL,
+	[correo] [varchar](50) NULL,
 	[contrasenna] [varchar](25) NULL,
+	[activo] [bit] NULL,
 	[id_Rol] [int] NULL,
 PRIMARY KEY CLUSTERED 
 (
@@ -218,11 +220,17 @@ SET IDENTITY_INSERT [dbo].[Rol] ON
 GO
 INSERT [dbo].[Rol] ([id_Rol], [nombre]) VALUES (1, N'Administrador')
 GO
+INSERT [dbo].[Rol] ([id_Rol], [nombre]) VALUES (2, N'Tecnico')
+GO
 SET IDENTITY_INSERT [dbo].[Rol] OFF
 GO
 SET IDENTITY_INSERT [dbo].[Usuario] ON 
 GO
-INSERT [dbo].[Usuario] ([id_Usuario], [nombreUsuario], [contrasenna], [id_Rol]) VALUES (1, N'lsegreda', N'Lau1234', 1)
+INSERT [dbo].[Usuario] ([id_Usuario], [nombre], [correo], [contrasenna], [activo], [id_Rol]) VALUES (1, N'Laura Segreda Elizondo', N'laura.segreda@gmail.com', N'1234', 1, 1)
+GO
+INSERT [dbo].[Usuario] ([id_Usuario], [nombre], [correo], [contrasenna], [activo], [id_Rol]) VALUES (7, N'Juan Torres Lopez', N'jtorres@gmail.com', N'12345', 1, 2)
+GO
+INSERT [dbo].[Usuario] ([id_Usuario], [nombre], [correo], [contrasenna], [activo], [id_Rol]) VALUES (8, N'Prueba', N'amartinez@gmail.com', N'1234', 1, 2)
 GO
 SET IDENTITY_INSERT [dbo].[Usuario] OFF
 GO
@@ -247,29 +255,160 @@ GO
 ALTER TABLE [dbo].[Usuario]  WITH CHECK ADD FOREIGN KEY([id_Rol])
 REFERENCES [dbo].[Rol] ([id_Rol])
 GO
-/****** Object:  StoredProcedure [dbo].[IniciarSesion]    Script Date: 7/6/2024 03:20:50 ******/
+/****** Object:  StoredProcedure [dbo].[ActualizarTecnico]    Script Date: 11/6/2024 17:41:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Actualización de Técnico
+-- =============================================
+
+
+CREATE   PROCEDURE [dbo].[ActualizarTecnico]
+@id_Usuario INT,
+@nombre VARCHAR(100),
+@correo VARCHAR(50),
+@contrasenna VARCHAR(25)
+
+AS
+BEGIN
+	
+	UPDATE Usuario
+	SET nombre = TRIM(@nombre),
+	correo = TRIM(@correo),
+	contrasenna = TRIM(@contrasenna)
+	where id_Usuario = @id_Usuario
+
+
+END
+GO
+/****** Object:  StoredProcedure [dbo].[ConsultarTecnico]    Script Date: 11/6/2024 17:41:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Consultar Información de un técnico
+-- =============================================
+
+
+CREATE   PROCEDURE [dbo].[ConsultarTecnico]
+@id_Usuario INT
+
+AS
+BEGIN
+	
+	SELECT us.id_Usuario, us.nombre, us.correo, 
+	CASE
+		WHEN us.activo = 1 THEN 'activo'
+		WHEN us.activo = 0 THEN 'inactivo'
+	END estado, us.id_Rol, rol.nombre nombreRol
+	FROM Usuario us
+	INNER JOIN Rol rol
+	ON us.id_Rol = rol.id_Rol
+	WHERE id_Usuario = @id_Usuario
+
+END
+GO
+/****** Object:  StoredProcedure [dbo].[ConsultarTecnicos]    Script Date: 11/6/2024 17:41:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Procedimiento para consultar los Técnicos registrados
+-- =============================================
+
+CREATE   PROCEDURE [dbo].[ConsultarTecnicos]
+AS
+BEGIN
+
+	SELECT us.id_Usuario, us.nombre, us.correo, 
+	CASE
+		WHEN us.activo = 1 THEN 'activo'
+		WHEN us.activo = 0 THEN 'inactivo'
+	END estado, us.id_Rol, rol.nombre nombreRol
+	FROM Usuario us
+	INNER JOIN Rol rol
+	ON us.id_Rol = rol.id_Rol
+	WHERE us.id_Rol = 2
+
+END
+GO
+/****** Object:  StoredProcedure [dbo].[EliminarTecnico]    Script Date: 11/6/2024 17:41:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Eliminar Técnico
+-- 
+-- 
+-- =============================================
+CREATE   PROCEDURE [dbo].[EliminarTecnico]
+@id_Usuario INT
+AS
+BEGIN
+	
+	DELETE
+	FROM Usuario
+	WHERE id_Usuario = @id_Usuario
+
+END
+GO
+/****** Object:  StoredProcedure [dbo].[IniciarSesion]    Script Date: 11/6/2024 17:41:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 
 -- =============================================
--- Procedimiento almacenado para iniciar sesi�n
+-- Procedimiento almacenado para iniciar sesión
 -- =============================================
 CREATE   PROCEDURE [dbo].[IniciarSesion]
 
-@nombreUsuario VARCHAR(100),
+@correo VARCHAR(100),
 @contrasenna VARCHAR(25)
 
 AS
 BEGIN
 	
-	SELECT us.nombreUsuario, rol.nombre nombreRol
+	SELECT us.nombre, us.correo, us.id_Rol, rol.nombre nombreRol, us.activo
 	FROM Usuario us
 	INNER JOIN Rol rol
 	ON us.id_Rol = rol.id_Rol
-	WHERE nombreUsuario = @nombreUsuario
-	AND contrasenna = @contrasenna
+	WHERE us.correo = @correo
+	AND us.contrasenna = @contrasenna
+	AND us.activo = 1
+
+END
+GO
+/****** Object:  StoredProcedure [dbo].[RegistrarTecnico]    Script Date: 11/6/2024 17:41:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- =============================================
+-- Procedimiento para Registrar un Tecnico
+-- =============================================
+CREATE   PROCEDURE [dbo].[RegistrarTecnico]
+@nombre VARCHAR (100),
+@correo VARCHAR (50),
+@contrasenna VARCHAR(25)
+
+AS
+BEGIN
+
+	DECLARE @activo BIT = 1;
+	DECLARE @id_Rol INT = 2;
+
+	IF NOT EXISTS ( SELECT 1 FROM Usuario WHERE correo = TRIM(@correo))
+		BEGIN
+			INSERT INTO Usuario
+			VALUES (TRIM(@nombre), TRIM(@correo), TRIM(@contrasenna), @activo, @id_Rol)
+		END 
 
 END
 GO

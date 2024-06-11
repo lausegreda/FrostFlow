@@ -67,5 +67,28 @@ namespace FrostFlow.Controllers
         }
 
 
+        [HttpGet]
+        public IActionResult ActualizarTecnico(int id)
+        {
+            var resp = _usuarioModel.ConsultarTecnico(id);
+            return View(resp.Dato);
+        }
+
+
+        [HttpPost]
+        public IActionResult ActualizarTecnico(Usuario entidad)
+        {
+            var resp = _usuarioModel.ActualizarTecnico(entidad);
+
+            if (resp.Codigo == "1")
+                return RedirectToAction("TecnicoListado", "Tecnicos");
+            else
+            {
+                ViewBag.MsjPantalla = resp.Mensaje;
+                return View();
+            }
+        }
+
+
     }
 }

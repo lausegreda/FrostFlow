@@ -57,5 +57,30 @@ namespace FrostFlow.Models
 
             return null;
         }
+
+        public UsuarioRespuesta ConsultarTecnico(long id)
+        {
+            string url = _configuration.GetSection("settings:UrlApi").Value + "api/Usuario/ConsultarTecnico?id_Usuario=" + id;
+            //_http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _sesion.HttpContext?.Session.GetString("Token"));
+            var resp = _http.GetAsync(url).Result;
+
+            if (resp.IsSuccessStatusCode)
+                return resp.Content.ReadFromJsonAsync<UsuarioRespuesta>().Result;
+
+            return null;
+        }
+
+        public UsuarioRespuesta ActualizarTecnico(Usuario entidad)
+        {
+            string url = _configuration.GetSection("settings:UrlApi").Value + "api/Usuario/ActualizarTecnico";
+            //_http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _sesion.HttpContext?.Session.GetString("Token"));
+            JsonContent body = JsonContent.Create(entidad);
+            var resp = _http.PutAsync(url, body).Result;
+
+            if (resp.IsSuccessStatusCode)
+                return resp.Content.ReadFromJsonAsync<UsuarioRespuesta>().Result;
+
+            return null;
+        }
     }
 }
