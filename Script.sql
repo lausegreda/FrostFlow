@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [FrostFlow]    Script Date: 11/6/2024 17:41:59 ******/
+/****** Object:  Database [FrostFlow]    Script Date: 11/6/2024 20:34:02 ******/
 CREATE DATABASE [FrostFlow]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -82,7 +82,7 @@ ALTER DATABASE [FrostFlow] SET QUERY_STORE (OPERATION_MODE = READ_WRITE, CLEANUP
 GO
 USE [FrostFlow]
 GO
-/****** Object:  Table [dbo].[Cliente]    Script Date: 11/6/2024 17:41:59 ******/
+/****** Object:  Table [dbo].[Cliente]    Script Date: 11/6/2024 20:34:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -99,7 +99,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Cotizacion]    Script Date: 11/6/2024 17:41:59 ******/
+/****** Object:  Table [dbo].[Cotizacion]    Script Date: 11/6/2024 20:34:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -117,7 +117,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Empleado]    Script Date: 11/6/2024 17:41:59 ******/
+/****** Object:  Table [dbo].[Empleado]    Script Date: 11/6/2024 20:34:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -133,7 +133,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Factura]    Script Date: 11/6/2024 17:41:59 ******/
+/****** Object:  Table [dbo].[Factura]    Script Date: 11/6/2024 20:34:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -151,7 +151,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[OrdenTrabajo]    Script Date: 11/6/2024 17:41:59 ******/
+/****** Object:  Table [dbo].[OrdenTrabajo]    Script Date: 11/6/2024 20:34:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -169,7 +169,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Producto]    Script Date: 11/6/2024 17:41:59 ******/
+/****** Object:  Table [dbo].[Producto]    Script Date: 11/6/2024 20:34:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -184,7 +184,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Rol]    Script Date: 11/6/2024 17:41:59 ******/
+/****** Object:  Table [dbo].[Rol]    Script Date: 11/6/2024 20:34:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -198,7 +198,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Usuario]    Script Date: 11/6/2024 17:41:59 ******/
+/****** Object:  Table [dbo].[Usuario]    Script Date: 11/6/2024 20:34:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -228,7 +228,7 @@ SET IDENTITY_INSERT [dbo].[Usuario] ON
 GO
 INSERT [dbo].[Usuario] ([id_Usuario], [nombre], [correo], [contrasenna], [activo], [id_Rol]) VALUES (1, N'Laura Segreda Elizondo', N'laura.segreda@gmail.com', N'1234', 1, 1)
 GO
-INSERT [dbo].[Usuario] ([id_Usuario], [nombre], [correo], [contrasenna], [activo], [id_Rol]) VALUES (7, N'Juan Torres Lopez', N'jtorres@gmail.com', N'12345', 1, 2)
+INSERT [dbo].[Usuario] ([id_Usuario], [nombre], [correo], [contrasenna], [activo], [id_Rol]) VALUES (7, N'Juan Torres Lopez', N'jtorres2@gmail.com', N'12345', 1, 2)
 GO
 INSERT [dbo].[Usuario] ([id_Usuario], [nombre], [correo], [contrasenna], [activo], [id_Rol]) VALUES (8, N'Prueba', N'amartinez@gmail.com', N'1234', 1, 2)
 GO
@@ -255,7 +255,7 @@ GO
 ALTER TABLE [dbo].[Usuario]  WITH CHECK ADD FOREIGN KEY([id_Rol])
 REFERENCES [dbo].[Rol] ([id_Rol])
 GO
-/****** Object:  StoredProcedure [dbo].[ActualizarTecnico]    Script Date: 11/6/2024 17:41:59 ******/
+/****** Object:  StoredProcedure [dbo].[ActualizarTecnico]    Script Date: 11/6/2024 20:34:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -283,7 +283,7 @@ BEGIN
 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[ConsultarTecnico]    Script Date: 11/6/2024 17:41:59 ******/
+/****** Object:  StoredProcedure [dbo].[ConsultarTecnico]    Script Date: 11/6/2024 20:34:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -311,7 +311,7 @@ BEGIN
 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[ConsultarTecnicos]    Script Date: 11/6/2024 17:41:59 ******/
+/****** Object:  StoredProcedure [dbo].[ConsultarTecnicos]    Script Date: 11/6/2024 20:34:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -336,7 +336,7 @@ BEGIN
 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[EliminarTecnico]    Script Date: 11/6/2024 17:41:59 ******/
+/****** Object:  StoredProcedure [dbo].[EliminarTecnico]    Script Date: 11/6/2024 20:34:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -357,7 +357,7 @@ BEGIN
 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[IniciarSesion]    Script Date: 11/6/2024 17:41:59 ******/
+/****** Object:  StoredProcedure [dbo].[IniciarSesion]    Script Date: 11/6/2024 20:34:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -384,7 +384,7 @@ BEGIN
 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[RegistrarTecnico]    Script Date: 11/6/2024 17:41:59 ******/
+/****** Object:  StoredProcedure [dbo].[RegistrarTecnico]    Script Date: 11/6/2024 20:34:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
