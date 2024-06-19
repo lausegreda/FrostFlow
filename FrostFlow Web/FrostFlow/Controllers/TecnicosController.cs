@@ -1,24 +1,94 @@
 ﻿using FrostFlow.Entities;
+using FrostFlow.Interfaces;
+using FrostFlow.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FrostFlow.Controllers
 {
-    public class TecnicosController : Controller
+    [Seguridad]
+    [ResponseCache(NoStore = true, Duration = 0)]
+    public class TecnicosController(IUsuarioModel _usuarioModel) : Controller
     {
+        [HttpGet]
         public IActionResult TecnicoRegistro()
         {
             return View();
         }
 
+        [HttpPost]
+        public IActionResult TecnicoRegistro(Usuario entidad)
+        {
+
+            //entidad.Contrasenna = _utilitariosModel.Encrypt(entidad.Contrasenna!);
+            var resp = _usuarioModel.RegistrarTecnico(entidad);
+
+            if (resp.Codigo == "1")
+                return RedirectToAction("TecnicoListado", "Tecnicos");
+            else
+            {
+                ViewBag.MsjPantalla = resp.Mensaje;
+                return View();
+            }
+        }
+
+        [HttpGet]
         public IActionResult TecnicoListado()
         {
-            return View();
+            var resp = _usuarioModel.ConsultarTecnicos();
+
+            if (resp.Codigo == "1")
+                return View(resp.Datos);
+            else
+            {
+                ViewBag.MsjPantalla = resp.Mensaje;
+                return View(new List<Usuario>());
+            }
+        }
+
+        [HttpGet]
+        public IActionResult EditarTecnico()
+        { 
+            return View(); 
+        
         }
 
         [HttpPost]
-        public IActionResult TecnicoRegistro(Tecnico entidad)
+        public IActionResult EliminarTecnico(Usuario entidad)
         {
-            return RedirectToAction("TecnicoListado", "Tecnicos");
+            var resp = _usuarioModel.EliminarTecnico(entidad.id_Usuario);
+
+            if (resp.Codigo == "1")
+                return RedirectToAction("TecnicoListado", "Tecnicos");
+            else
+            {
+                ViewBag.MsjPantalla = resp.Mensaje;
+                return View();
+            }
         }
+
+
+        [HttpGet]
+        public IActionResult ActualizarTecnico(int id)
+        {
+            var resp = _usuarioModel.ConsultarTecnico(id);
+            return View(resp.Dato);
+        }
+
+
+        [HttpPost]
+        public IActionResult ActualizarTecnico(Usuario entidad)
+        {
+            var resp = _usuarioModel.ActualizarTecnico(entidad);
+
+            if (resp.Codigo == "1")
+                return RedirectToAction("TecnicoListado", "Tecnicos");
+            else
+            {
+                ViewBag.MsjPantalla = resp.Mensaje;
+                return View();
+            }
+        }
+
+
     }
 }

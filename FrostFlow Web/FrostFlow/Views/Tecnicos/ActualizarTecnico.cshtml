@@ -1,9 +1,8 @@
 ﻿@model FrostFlow.Entities.Usuario
 @{
-    ViewData["Title"] = "Login";
-    Layout = "~/Views/Shared/_Layout_Externo.cshtml";
+    ViewData["Title"] = "ActualizarTecnico";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 
 <div class="d-flex p-2">
     <div class="card-body">
@@ -13,9 +12,15 @@
                     <div class="row no-gutters">
                         <div class="col-xl-12">
                             <div class="auth-form">
-                                <h4 class="text-center mb-4">Iniciar Sesión</h4>
-                                @using (Html.BeginForm("Login", "Home", FormMethod.Post))
-                                    {
+                                <h4 class="text-center mb-4">Actualizar Técnico</h4>
+                                @using (Html.BeginForm("ActualizarTecnico", "Tecnicos", FormMethod.Post))
+                                {
+                                    @Html.HiddenFor(m => m.id_Usuario)
+
+                                    <div class="form-group">
+                                        <label><strong>Nombre del técnico</strong></label>
+                                        @Html.TextBoxFor(m => m.nombre, new { @class = "form-control", @type = "text", @required = "true" })
+                                    </div>
                                     <div class="form-group">
                                         <label><strong>Correo</strong></label>
                                         @Html.TextBoxFor(m => m.correo, new { @class = "form-control", @type = "email", @required = "true" })
@@ -24,24 +29,17 @@
                                         <label><strong>Contraseña</strong></label>
                                         @Html.TextBoxFor(m => m.contrasenna, new { @class = "form-control", @type = "password", @required = "true" })
                                     </div>
-                                    <div class="text-center">
-                                        <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
-                                    </div>
-
                                     @if (ViewBag.MsjPantalla != null)
                                     {
-                                        <div style="margin-top:10px">
-                                            <div style="text-align:left; color:red">
+                                        <br>
+                                        <div class="alert alert-warning" role="alert" style="text-align:center">
                                             @ViewBag.MsjPantalla
                                         </div>
-                                        </div>
                                     }
-
-                                    }
-                                <div class="new-account mt-3">
-                                    <p><a href="@Url.Action("ForgotPassword", "Home")" class="text-primary">¿Olvidó la contraseña?</a></p>
-                                </div>
-                                </div>
+                                    <div class="text-center mt-4">
+                                        <button type="submit" class="btn btn-primary btn-block">Actualizar Técnico</button>
+                                    </div>
+                                }
                             </div>
                         </div>
                     </div>
@@ -49,3 +47,4 @@
             </div>
         </div>
     </div>
+</div>

@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -35,7 +37,7 @@
                     </div>
                 </div>
                 }
-                else if (@Context.Session.GetString("NombreRol")!.ToString().Equals("Tecnico")) //Solo se le muestra al Tecnico
+                else if (@Context.Session.GetString("NombreRol")!.ToString().Equals("Tecnicos")) //Solo se le muestra al Tecnico
                 {
                 <a href=@Url.Action("PantallaTecnico", "Home") class="brand-logo">
                     <h1 class="logo-abbr">MDR</h1>
