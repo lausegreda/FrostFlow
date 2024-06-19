@@ -15,7 +15,7 @@
                 <table class="table table-bordered verticle-middle table-responsive-sm">
                     <thead>
                         <tr>
-                            <th scope="col">Nombre del Tecnico</th>
+                            <th scope="col">Nombre</th>
                             <th scope="col">Correo</th>
                             <th scope="col">Número</th>
                             <th scope="col">Estado</th>
@@ -23,30 +23,107 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var tecnico in Model)
-                        {
-                            <tr>
-                                <td>@tecnico.Nombre</td>
-                                <td>@tecnico.Email</td>
-                                <td>@tecnico.Numero</td>
-                                <td>
-                                    <span class="badge badge-@(tecnico.Activo ? "success" : "danger")">
-                                        @(tecnico.Activo ? "Activo" : "Inactivo")
-                                    </span>
-                                </td>
-                                <td>
-                                    <span>
-                                        <a href="javascript:void()" class="mr-4" data-toggle="tooltip" data-placement="top" title="Editar">
-                                            <i class="fa fa-pencil color-muted"></i>
-                                        </a>
-                                        <a href="javascript:void()" data-toggle="tooltip" data-placement="top" title="Eliminar">
-                                            <i class="fa fa-close color-danger"></i>
-                                        </a>
-                                    </span>
-                                </td>
-                            </tr>
-                        }
-                    </tbody>  
+                        <tr>
+                            <td>Pablo Rodriguez</td>
+                            <td>pabloodriguez@gmail.com</td>
+                            <td>88887777</td>
+                            <td>
+                                <span class="badge badge-success">Activo</span>
+                            </td>
+                            <td>
+                                <span>
+                                    <a href="javascript:void()" class="mr-4" data-toggle="tooltip"
+                                       data-placement="top" title="Editar">
+                                        <i class="fa fa-pencil color-muted"></i>
+                                    </a>
+                                    <a href="javascript:void()" data-toggle="tooltip"
+                                       data-placement="top" title="Eliminar">
+                                        <i class="fa fa-close color-danger"></i>
+                                    </a>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Laura Maria</td>
+                            <td>laumar@gmail.com</td>
+                            <td>41526798</td>
+                            <td>
+                                <span class="badge badge-success">Activo</span>
+                            </td>
+                            <td>
+                                <span>
+                                    <a href="javascript:void()" class="mr-4" data-toggle="tooltip"
+                                       data-placement="top" title="Editar">
+                                        <i class="fa fa-pencil color-muted"></i>
+                                    </a>
+                                    <a href="javascript:void()" data-toggle="tooltip"
+                                       data-placement="top" title="Eliminar">
+                                        <i class="fa fa-close color-danger"></i>
+                                    </a>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Julian Jovares</td>
+                            <td>jovares@gmail.com</td>
+                            <td>15667963</td>
+                            <td>
+                                <span class="badge badge-success">Activo</span>
+                            </td>
+                            <td>
+                                <span>
+                                    <a href="javascript:void()" class="mr-4" data-toggle="tooltip"
+                                       data-placement="top" title="Editar">
+                                        <i class="fa fa-pencil color-muted"></i>
+                                    </a>
+                                    <a href="javascript:void()" data-toggle="tooltip"
+                                       data-placement="top" title="Eliminar">
+                                        <i class="fa fa-close color-danger"></i>
+                                    </a>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Carlos Charlie</td>
+                            <td>cacharlie123@gmail.com</td>
+                            <td>84568484</td>
+                            <td>
+                                <span class="badge badge-danger">Inactivo</span>
+                            </td>
+                            <td>
+                                <span>
+                                    <a href="javascript:void()" class="mr-4" data-toggle="tooltip"
+                                       data-placement="top" title="Editar">
+                                        <i class="fa fa-pencil color-muted"></i>
+                                    </a>
+                                    <a href="javascript:void()" data-toggle="tooltip"
+                                       data-placement="top" title="Eliminar">
+                                        <i class="fa fa-close color-danger"></i>
+                                    </a>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Pamela Cristina Sanchez</td>
+                            <td>pamcrissan@gmail.com</td>
+                            <td>87542196</td>
+                            <td>
+                                <span class="badge badge-success">Activo</span>
+                            </td>
+                            <td>
+                                <span>
+                                    <a href="javascript:void()" class="mr-4" data-toggle="tooltip"
+                                       data-placement="top" title="Editar">
+                                        <i class="fa fa-pencil color-muted"></i>
+                                    </a>
+                                    <a href="javascript:void()" data-toggle="tooltip"
+                                       data-placement="top" title="Eliminar">
+                                        <i class="fa fa-close color-danger"></i>
+                                    </a>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
