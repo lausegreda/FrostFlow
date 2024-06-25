@@ -9,6 +9,7 @@
         public string estado { get; set; }
         public int id_Rol { get; set; }
         public string nombreRol { get; set; }
+        public bool contrasennaTemporal { get; set; }
     }
 
     public class UsuarioRespuesta // Se agrega para manejo de mensajes estandarizados en las respuestas de la BD con el API

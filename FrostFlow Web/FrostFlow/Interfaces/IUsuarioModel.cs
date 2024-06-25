@@ -11,5 +11,6 @@ namespace FrostFlow.Interfaces
         UsuarioRespuesta EliminarTecnico(int id_Usuario);
         UsuarioRespuesta ActualizarTecnico(Usuario entidad);
         UsuarioRespuesta ConsultarTecnico(long id_Usuario);
+        public UsuarioRespuesta CambiarContrasenna(Usuario entidad);
     }
 }

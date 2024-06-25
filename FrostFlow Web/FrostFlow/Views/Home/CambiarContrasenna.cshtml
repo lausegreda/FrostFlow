@@ -1,0 +1,43 @@
+﻿@model FrostFlow.Entities.Usuario
+@{
+    ViewData["Title"] = "CambiarContrasenna";
+    Layout = "~/Views/Shared/_Layout_Externo.cshtml";
+}
+
+
+    <div class="card-body" style="padding:10%">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="authincation-content">
+                    <div class="row no-gutters">
+                        <div class="col-xl-12">
+                            <div class="auth-form">
+                                <h4 class="text-center mb-4">Debe cambiar su contraseña para continuar</h4>
+                            @using (Html.BeginForm("CambiarContrasenna", "Home", FormMethod.Post))
+                                {
+                                @Html.HiddenFor(m => m.id_Usuario)
+                                //@Html.HiddenFor(m => m.contrasennaTemporal)
+                                    <div class="form-group">
+                                        <label><strong>Contraseña Nueva</strong></label>
+                                        @Html.TextBoxFor(m => m.contrasenna, new { @class = "form-control", @type = "password", @required = "true" })
+                                    </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary btn-block">Procesar</button>
+                                </div>
+                                    @if (ViewBag.MsjPantalla != null)
+                                    {
+                                        <div style="margin-top:10px">
+                                            <div style="text-align:left; color:red">
+                                                @ViewBag.MsjPantalla
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

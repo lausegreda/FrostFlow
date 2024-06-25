@@ -159,5 +159,28 @@ namespace FrostFlow_API.Controllers
                 return Ok(respuesta);
             }
         }
+
+        [Route("CambiarContrasenna")]
+        [HttpPut]
+        public IActionResult CambiarContrasenna(Usuario entidad)
+        {
+            using (var db = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
+            {
+                UsuarioRespuesta respuesta = new UsuarioRespuesta();
+                //bool contrasennaTemporal = false;
+
+                var result = db.Execute("CambiarContrasenna",
+                    new { entidad.correo, entidad.contrasenna},
+                    commandType: CommandType.StoredProcedure);
+
+                if (result <= 0)
+                {
+                    respuesta.Codigo = "0";
+                    respuesta.Mensaje = "Ocurrió un error, verifique los datos ingresados";
+                }
+
+                return Ok(respuesta);
+            }
+        }
     }
 }

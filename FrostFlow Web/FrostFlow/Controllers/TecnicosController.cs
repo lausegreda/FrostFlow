@@ -7,7 +7,7 @@ namespace FrostFlow.Controllers
 {
     [Seguridad]
     [ResponseCache(NoStore = true, Duration = 0)]
-    public class TecnicosController(IUsuarioModel _usuarioModel) : Controller
+    public class TecnicosController(IUsuarioModel _usuarioModel, IUtilitariosModel _utilitariosModel) : Controller
     {
         [HttpGet]
         public IActionResult TecnicoRegistro()
@@ -19,7 +19,7 @@ namespace FrostFlow.Controllers
         public IActionResult TecnicoRegistro(Usuario entidad)
         {
 
-            //entidad.Contrasenna = _utilitariosModel.Encrypt(entidad.Contrasenna!);
+            entidad.contrasenna= _utilitariosModel.Encrypt(entidad.contrasenna);
             var resp = _usuarioModel.RegistrarTecnico(entidad);
 
             if (resp.Codigo == "1")
