@@ -1,8 +1,134 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "MantenimientoFactura";
 }
 
+<style>
+    .form-control {
+        font-size: 20px;
+    }
+
+    label {
+        display: inline-block;
+        margin-bottom: 0.5rem;
+        font-size: 18px;
+        color: #454545;
+    }
+
+    .header-left .search_bar .search_icon i {
+        font-size: 25px;
+        color: #454545;
+    }
+
+    .stat-widget-one .stat-text {
+        font-size: 20px;
+        color: #868e96;
+    }
+
+    .header-right .nav-item .nav-link {
+        color: #464a53;
+        font-size: 28px;
+    }
+
+    .stat-widget-one .stat-digit {
+        font-size: 25px;
+        color: #373757;
+    }
+
+    .nav-label {
+        font-size: 18px;
+    }
+
+    .quixnav .metismenu > li > a {
+        font-size: 18px;
+        color: #BDBDB9;
+    }
+
+    .card-title {
+        font-size: 20px;
+        font-weight: 500;
+        color: #454545;
+        text-transform: capitalize;
+        letter-spacing: 0.05em;
+    }
+
+    .btn-primary {
+        color: #fff;
+        background-color: #593bdb;
+        border-color: #593bdb;
+        padding: 14px 11px;
+        font-size: 18px;
+    }
+
+    .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+        color: #333;
+        font-size: 15px;
+    }
+
+    table.dataTable thead .sorting_asc, table.dataTable thead .sorting_desc, table.dataTable thead .sorting_asc_disabled, table.dataTable thead .sorting_desc_disabled {
+        cursor: pointer;
+        background-repeat: no-repeat;
+        background-position: center right;
+        font-size: 17px;
+    }
+
+    thead {
+        display: table-header-group;
+        vertical-align: middle;
+        unicode-bidi: isolate;
+        border-color: inherit;
+        border-top-color:;
+        border-right-color:;
+        border-bottom-color:;
+        border-left-color:;
+        font-size: 17px;
+    }
+
+    tbody {
+        display: table-row-group;
+        vertical-align: middle;
+        unicode-bidi: isolate;
+        border-color: inherit;
+        font-size: 17px;
+        color: #454545;
+    }
+
+    table.dataTable tbody th, table.dataTable tbody td {
+        padding: 10px 25px;
+    }
+
+    .btn-primary1 {
+        color: #fff;
+        background-color: #593bdb;
+        border-color: #593bdb;
+        padding: 14px 11px;
+        font-size: 15px;
+    }
+
+    table#example {
+        padding: 3rem 0 3rem 0;
+    }
+
+    .quixnav .metismenu > li.mm-active ul {
+        background-color: rgba(88, 115, 254, 0.04);
+        font-size: 16px;
+    }
+
+    .table:not(.table-bordered) thead th {
+        border-top: none;
+        color: #454545;
+    }
+
+    .footer .copyright {
+        background-color: ##868e96; /* Color de fondo del pie de página */
+        font-size: 20px;
+        color: #373757;
+        text-align: center;
+        padding: 0.9375rem;
+        margin-top: auto;
+        font-size: 17px;
+        color: #333;
+    }
+</style>
 
 <div class="row">
     <div class="col-12">
@@ -90,5 +216,3 @@
         </div>
     </div>
 </div>
-
-

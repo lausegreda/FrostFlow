@@ -2,32 +2,125 @@
     ViewData["Title"] = "Notificaciones";
 }
 
-    <div class="card">
-        <div class="card-header">
-            <h4 class="card-title">Detalles de Stock Bajo</h4>
-        </div>
-        <div class="card-body">
-            <div class="alert alert-warning" role="alert">
-                <h5 class="alert-heading">Atención: Nivel de Stock Bajo</h5>
-                <p>El siguiente producto está bajo en stock:</p>
-                <ul>
-                    <li>Producto: Producto X</li>
-                    <li>Cantidad Disponible: 10</li>
-                    <li>Proveedor: Proveedor Y</li>
-                </ul>
-                <hr>
-                <p class="mb-0">Por favor, tome las medidas necesarias para evitar posibles problemas de desabastecimiento.</p>
+<style>
+    .form-control {
+        font-size: 20px;
+    }
+
+    .header-left .search_bar .search_icon i {
+        font-size: 25px;
+        color: #454545;
+    }
+
+    .stat-widget-one .stat-text {
+        font-size: 20px;
+        color: #868e96;
+    }
+
+    .header-right .nav-item .nav-link {
+        color: #464a53;
+        font-size: 28px;
+    }
+
+    .stat-widget-one .stat-digit {
+        font-size: 25px;
+        color: #373757;
+    }
+
+    .nav-label {
+        font-size: 18px;
+    }
+
+    .quixnav .metismenu > li > a {
+        font-size: 18px;
+        color: #BDBDB9;
+    }
+
+    .quixnav .metismenu > li.mm-active ul {
+        background-color: rgba(88, 115, 254, 0.04);
+        font-size: 16px;
+    }
+
+    .footer .copyright {
+        background-color: ##868e96; /* Color de fondo del pie de página */
+        font-size: 20px;
+        color: #373757;
+        text-align: center;
+        padding: 0.9375rem;
+        margin-top: auto;
+    }
+
+    .card-title {
+        font-size: 20px;
+        font-weight: 500;
+        color: #454545;
+        text-transform: capitalize;
+        letter-spacing: 0.05em;
+    }
+
+    .alert {
+        font-size: 17px;
+        padding: 20px;
+        margin-bottom: 20px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
+
+    .alert-warning {
+        color: #856404;
+        background-color: #fff3cd;
+        border-color: #ffeeba;
+    }
+
+    .alert-heading {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .alert ul {
+        margin-bottom: 0;
+        padding-left: 1.5rem;
+    }
+
+    .alert hr {
+        border-top: 1px solid #ffeeba;
+    }
+
+    .mb-0 {
+        margin-bottom: 0;
+    }
+</style>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Detalles de Stock Bajo</h4>
             </div>
-            <div class="alert alert-warning" role="alert">
-                <h5 class="alert-heading">Atención: Nivel de Stock Bajo</h5>
-                <p>El siguiente producto está bajo en stock:</p>
-                <ul>
-                    <li>Producto: Producto Z</li>
-                    <li>Cantidad Disponible: 5</li>
-                    <li>Proveedor: Proveedor W</li>
-                </ul>
-                <hr>
-                <p class="mb-0">Por favor, tome las medidas necesarias para evitar posibles problemas de desabastecimiento.</p>
+            <div class="card-body">
+                <div class="alert alert-warning" role="alert">
+                    <h5 class="alert-heading">Atención: Nivel de Stock Bajo</h5>
+                    <p>El siguiente producto está bajo en stock:</p>
+                    <ul>
+                        <li>Producto: Producto X</li>
+                        <li>Cantidad Disponible: 10</li>
+                        <li>Proveedor: Proveedor Y</li>
+                    </ul>
+                    <hr>
+                    <p class="mb-0">Por favor, tome las medidas necesarias para evitar posibles problemas de desabastecimiento.</p>
+                </div>
+                <div class="alert alert-warning" role="alert">
+                    <h5 class="alert-heading">Atención: Nivel de Stock Bajo</h5>
+                    <p>El siguiente producto está bajo en stock:</p>
+                    <ul>
+                        <li>Producto: Producto Z</li>
+                        <li>Cantidad Disponible: 5</li>
+                        <li>Proveedor: Proveedor W</li>
+                    </ul>
+                    <hr>
+                    <p class="mb-0">Por favor, tome las medidas necesarias para evitar posibles problemas de desabastecimiento.</p>
+                </div>
             </div>
         </div>
     </div>
+</div>

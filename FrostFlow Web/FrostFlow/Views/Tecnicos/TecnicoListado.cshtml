@@ -4,6 +4,134 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<style>
+    .form-control {
+        font-size: 20px;
+    }
+
+    .header-left .search_bar .search_icon i {
+        font-size: 25px;
+        color: #454545;
+    }
+
+    .stat-widget-one .stat-text {
+        font-size: 20px;
+        color: #868e96;
+    }
+
+    .header-right .nav-item .nav-link {
+        color: #464a53;
+        font-size: 28px;
+    }
+
+    .stat-widget-one .stat-digit {
+        font-size: 25px;
+        color: #373757;
+    }
+
+    .nav-label {
+        font-size: 18px;
+    }
+
+    .quixnav .metismenu > li > a {
+        font-size: 18px;
+        color: #BDBDB9;
+    }
+
+    .card {
+        margin-bottom: 1.875rem;
+        background-color: #fff;
+        transition: all .5s ease-in-out;
+        position: relative;
+        border: 0px solid transparent;
+        border-radius: 0.25rem;
+        box-shadow: 0px 0px 13px 0px rgba(82, 63, 105, 0.05);
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .card-title {
+        font-size: 20px;
+        font-weight: 500;
+        color: #454545;
+        text-transform: capitalize;
+        letter-spacing: 0.05em;
+    }
+
+    .btn-primary {
+        color: #fff;
+        background-color: #593bdb;
+        border-color: #593bdb;
+        padding: 14px 11px;
+        font-size: 18px;
+    }
+
+    .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+        color: #333;
+        font-size: 15px;
+    }
+
+    table.dataTable thead .sorting_asc, table.dataTable thead .sorting_desc, table.dataTable thead .sorting_asc_disabled, table.dataTable thead .sorting_desc_disabled {
+        cursor: pointer;
+        background-repeat: no-repeat;
+        background-position: center right;
+        font-size: 17px;
+    }
+
+    thead {
+        display: table-header-group;
+        vertical-align: middle;
+        unicode-bidi: isolate;
+        border-color: inherit;
+        border-top-color:;
+        border-right-color:;
+        border-bottom-color:;
+        border-left-color:;
+        font-size: 17px;
+        color: #454545;
+    }
+
+    tbody {
+        display: table-row-group;
+        vertical-align: middle;
+        unicode-bidi: isolate;
+        border-color: inherit;
+        font-size: 17px;
+        color: #454545;
+    }
+
+    table.dataTable tbody th, table.dataTable tbody td {
+        padding: 10px 25px;
+    }
+
+    .btn-primary1 {
+        color: #fff;
+        background-color: #593bdb;
+        border-color: #593bdb;
+        padding: 14px 11px;
+        font-size: 15px;
+    }
+
+    table#example {
+        padding: 3rem 0 3rem 0;
+    }
+
+    .quixnav .metismenu > li.mm-active ul {
+        background-color: rgba(88, 115, 254, 0.04);
+        font-size: 16px;
+    }
+
+    .footer .copyright {
+        background-color: ##868e96; /* Color de fondo del pie de página */
+        font-size: 20px;
+        color: #373757;
+        text-align: center;
+        padding: 0.9375rem;
+        margin-top: auto;
+        font-size: 17px;
+        color: #333;
+    }
+</style>
+
 <div class="col-lg-12">
     <div class="card">
         <div class="card-header">
@@ -39,10 +167,10 @@
                                 <td>@item.correo</td>
                                 <td>@item.estado</td>
                                 <td>
-                                    <a class="btn btn-primary" href="@Url.Action("ActualizarTecnico","Tecnicos", new { id = item.id_Usuario })">
+                                    <a class="btn btn-primary1" href="@Url.Action("ActualizarTecnico","Tecnicos", new { id = item.id_Usuario })">
                                         <i class="fa fa-pencil-square-o faa-tada animated"></i>
                                     </a>
-                                    <button type="button" class="btn btn-primary passingID" data-toggle="modal" data-target="#exampleModal"
+                                    <button type="button" class="btn btn-primary1 passingID" data-toggle="modal" data-target="#exampleModal"
                                             data-id="@item.id_Usuario" data-name="@item.nombre">
                                         <i class="fa fa-trash-o faa-pulse animated"></i>
                                     </button>

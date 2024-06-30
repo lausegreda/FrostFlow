@@ -10,170 +10,351 @@
     Content body start
 ***********************************-->
 
-    <div class="container-fluid">
-        <div class="row page-titles mx-0">
-            <div class="col-sm-6 p-md-0">
-                <div class="welcome-text">
-                    <h4>Calendario</h4>
-                    <p class="mb-0">Registro de evntos</p>
-                </div>
-            </div>
-            <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="javascript:void(0)"></a></li>
-                    <li class="breadcrumb-item active"><a href="javascript:void(0)"></a></li>
-                </ol>
+<style>
+    .form-control {
+        font-size: 20px;
+    }
+
+    .header-left .search_bar .search_icon i {
+        font-size: 25px;
+        color: #454545;
+    }
+
+    .header-left {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        font-size: 25px;
+        color: #454545;
+    }
+
+        .header-left .search_bar .search_icon {
+            background: #fff !important;
+            height: 44px;
+            padding: 5px 15px !important;
+            border-top-left-radius: 5rem;
+            border-bottom-left-radius: 5rem;
+            font-size: 25px;
+            color: #454545;
+        }
+
+        .header-left input {
+            background: #fff !important;
+            min-width: 300px;
+            min-height: 44px;
+            font-size: 20px;
+            border-color: transparent;
+            color: #454545 !important;
+            border-top-right-radius: 5rem;
+            border-bottom-right-radius: 5rem;
+            box-shadow: none;
+        }
+
+    .stat-widget-one .stat-text {
+        font-size: 20px;
+        color: #868e96;
+    }
+
+    .header-right .nav-item .nav-link {
+        color: #464a53;
+        font-size: 28px;
+    }
+
+    .stat-widget-one .stat-digit {
+        font-size: 25px;
+        color: #373757;
+    }
+
+    .nav-label {
+        font-size: 18px;
+    }
+
+    .quixnav .metismenu > li > a {
+        font-size: 18px;
+        color: #BDBDB9;
+    }
+
+    .quixnav .metismenu > li.mm-active ul {
+        background-color: rgba(88, 115, 254, 0.04);
+        font-size: 16px;
+    }
+
+    #external-events [data-class="bg-success"]::before {
+        content: "";
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #7ED321;
+        margin-right: 11px;
+        position: relative;
+        top: 2px;
+    }
+
+    .page-titles h4 {
+        margin-bottom: 0;
+        margin-top: 0;
+        color: #593bdb;
+        font-size: 20px;
+    }
+
+    .mb-0, .my-0 {
+        margin-bottom: 0 !important;
+        font-size: 20px;
+    }
+
+    p {
+        margin-top: 5px;
+        margin-bottom: 1rem;
+        font-size: 18px;
+        color: #454545;
+    }
+
+    #external-events [data-class="bg-primary"] {
+        background-color: transparent !important;
+        color: #454545;
+        font-size: 16px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .fc-state-active, .fc-state-disabled, .fc-state-down, .fc-state-hover {
+        color: #454545;
+        background-color: #e6e6e6;
+    }
+
+    .fc th.fc-widget-header {
+        background: #EAEAEB !important;
+        color: #454545;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        padding: 0.625rem 0;
+        text-transform: uppercase;
+    }
+
+    h4, .h4 {
+        font-size: 20px;
+    }
+
+    #external-events [data-class="bg-primary"] {
+        background-color: transparent !important;
+        color: #454545;
+        font-size: 16px;
+    }
+
+    #external-events [data-class="bg-success"] {
+        background-color: transparent !important;
+        color: #454545;
+        font-size: 16px;
+    }
+
+    #external-events [data-class="bg-dark"] {
+        background-color: transparent !important;
+        color: #454545;
+        font-size: 16px;
+    }
+
+    .w-100 {
+        width: 100% !important;
+    }
+
+    .btn-primary {
+        color: #fff;
+        background-color: #593bdb;
+        border-color: #593bdb;
+        font-size: 16px;
+    }
+
+    .fc-toolbar h2 {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.875rem;
+        text-transform: uppercase;
+    }
+
+    .fc button, .fc table, body .fc {
+        font-size: 18px;
+    }
+
+    .header-right .header-profile .dropdown-menu {
+        padding: 45px 10px;
+        min-width: 15.5rem;
+        font-size: 18px;
+    }
+
+    .header-right .header-profile .dropdown-item {
+        padding: 10px 24px;
+    }
+
+    .footer .copyright {
+        background-color: ##868e96; /* Color de fondo del pie de página */
+        font-size: 20px;
+        color: #373757;
+        text-align: center;
+        padding: 0.9375rem;
+        margin-top: auto;
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="row page-titles mx-0">
+        <div class="col-sm-6 p-md-0">
+            <div class="welcome-text">
+                <h4>Calendario</h4>
+                <p class="mb-0">Registro de eventos</p>
             </div>
         </div>
-        <!-- row -->
+        <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)"></a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)"></a></li>
+            </ol>
+        </div>
+    </div>
+    <!-- row -->
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-intro-title">Calendario</h4>
 
-
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-intro-title">Calendario</h4>
-
-                        <div class="">
-                            <div id="external-events" class="my-3">
-                                <p>Entradas en el calendario de trabajo</p>
-                                <div class="external-event" data-class="bg-primary"><i class="fa fa-move"></i>Nueva Cita</div>
-                                <div class="external-event" data-class="bg-success">
-                                    <i class="fa fa-move"></i>Mantenimiento de equipos
+                    <div class="">
+                        <div id="external-events" class="my-3">
+                            <p>Entradas en el calendario de trabajo</p>
+                            <div class="external-event" data-class="bg-primary"><i class="fa fa-move"></i>Nueva Cita</div>
+                            <div class="external-event" data-class="bg-success">
+                                <i class="fa fa-move"></i>Mantenimiento de equipos
+                            </div>
+                            <div class="external-event" data-class="bg-dark"><i class="fa fa-move"></i>Visita de inspección</div>
+                        </div>
+                        <!-- checkbox -->
+                        <a href="javascript:void()" data-toggle="modal" data-target="#add-category" class="btn btn-primary btn-event w-100">
+                            <span class="align-middle"><i class="ti-plus"></i></span> Creación de nuevo servicio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <div class="card">
+                <div class="card-body">
+                    <div id="calendar" class="app-fullcalendar"></div>
+                </div>
+            </div>
+        </div>
+        <!-- BEGIN MODAL -->
+        <div class="modal fade none-border" id="event-modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><strong>Nuevo Servicio</strong></h4>
+                    </div>
+                    <div class="container my-4">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="control-label">Nombre Servicio</label>
+                                    <input class="form-control form-white" placeholder="Servicio requerido" type="text" name="event-name">
                                 </div>
-                                <div class="external-event" data-class="bg-dark"><i class="fa fa-move"></i>Visita de inspección</div>
-                            </div>
-                            <!-- checkbox -->
-                            <a href="javascript:void()" data-toggle="modal" data-target="#add-category" class="btn btn-primary btn-event w-100">
-                                <span class="align-middle"><i class="ti-plus"></i></span> Creación de nuevo servicio
-                            </a>
+                                <div class="col-md-6">
+                                    <label class="control-label">Escoja el tipo de servicio</label>
+                                    <select class="form-control form-white" data-placeholder="Tipo..." name="category-name">
+                                        <option value="primary">Nueva Cita</option>
+                                        <option value="success">Mantenimiento de equipos</option>
+                                        <option value="dark">Visita de inspección</option>
+                                    </select>
+                                </div>
+                        </form>
+                        <div class="col-md-6">
+                            <label class="control-label">Técnico asignado</label>
+                            <select class="form-control form-white" data-placeholder="Técnico..." name="service-tech">
+                                <option value="tech1">Pablo Rodriguez</option>
+                                <option value="tech2">Laura Maria</option>
+                                <option value="tech3">Julian Jovares</option>
+                                <option value="tech4">Carlos Charlie</option>
+                                <option value="tech5">Pamela Cristina</option>
+                            </select>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-9">
-                <div class="card">
-                    <div class="card-body">
-                        <div id="calendar" class="app-fullcalendar"></div>
-                    </div>
-                </div>
-            </div>
-            <!-- BEGIN MODAL -->
-            <div class="modal fade none-border" id="event-modal">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title"><strong>Nuevo Servicio</strong></h4>
+                        <div class="col-md-6">
+                            <label class="control-label">Hora del servicio</label>
+                            <input class="form-control form-white" placeholder="Hora" type="text" name="service-hour">
                         </div>
-                        <div class="container my-4">
-                            <form>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label class="control-label">Nombre Servicio</label>
-                                        <input class="form-control form-white" placeholder="Servicio requerido" type="text" name="event-name">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="control-label">Escoja el tipo de servicio</label>
-                                        <select class="form-control form-white" data-placeholder="Tipo..." name="category-name">
-                                            <option value="primary">Nueva Cita</option>
-                                            <option value="success">Mantenimiento de equipos</option>
-                                            <option value="dark">Visita de inspección</option>
-                                        </select>
-                                    </div>
-                            </form>
-                            <div class="col-md-6">
-                                <label class="control-label">Técnico asignado</label>
-                                <select class="form-control form-white" data-placeholder="Técnico..." name="service-tech">
-                                    <option value="tech1">Pablo Rodriguez</option>
-                                    <option value="tech2">Laura Maria</option>
-                                    <option value="tech3">Julian Jovares</option>
-                                    <option value="tech4">Carlos Charlie</option>
-                                    <option value="tech5">Pamela Cristina</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="control-label">Hora del servicio</label>
-                                <input class="form-control form-white" placeholder="Hora" type="text" name="service-hour">
-                            </div>
-                            <div class="col-md-6">
-                                <label class="control-label">Cliente asociado</label>
-                                <select class="form-control form-white" data-placeholder="Cliente..." name="service-client">
-                                    <option value="client1">Tiger Nixon</option>
-                                    <option value="client2">Garrett Winters</option>
-                                    <option value="client3">Ashton Cox</option>
-                                    <option value="client4">Cedric Kelly</option>
-                                    <option value="client5">Brielle Williamson</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="control-label">Cotización asociada</label>
-                                <select class="form-control form-white" data-placeholder="Cotización..." name="service-cot">
-                                    <option value="cot1">1</option>
-                                    <option value="cot2">2</option>
-                                    <option value="cot3">3</option>
-                                    <option value="cot4">4</option>
-                                    <option value="cot5">5</option>
+                        <div class="col-md-6">
+                            <label class="control-label">Cliente asociado</label>
+                            <select class="form-control form-white" data-placeholder="Cliente..." name="service-client">
+                                <option value="client1">Tiger Nixon</option>
+                                <option value="client2">Garrett Winters</option>
+                                <option value="client3">Ashton Cox</option>
+                                <option value="client4">Cedric Kelly</option>
+                                <option value="client5">Brielle Williamson</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="control-label">Cotización asociada</label>
+                            <select class="form-control form-white" data-placeholder="Cotización..." name="service-cot">
+                                <option value="cot1">1</option>
+                                <option value="cot2">2</option>
+                                <option value="cot3">3</option>
+                                <option value="cot4">4</option>
+                                <option value="cot5">5</option>
 
-                                </select>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="control-label">Comentarios adicionales</label>
-                                <input class="form-control form-white" placeholder="Comentarios" type="text" name="service-comments">
-                            </div>
+                            </select>
                         </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-success save-event waves-effect waves-light" data-dismiss="modal">
-                                Crear
-                                servicio
-                            </button>
-
-                            <button type="button" class="btn btn-danger delete-event waves-effect waves-light" data-dismiss="modal">Eliminar</button>
+                        <div class="col-md-6">
+                            <label class="control-label">Comentarios adicionales</label>
+                            <input class="form-control form-white" placeholder="Comentarios" type="text" name="service-comments">
                         </div>
                     </div>
                 </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-success save-event waves-effect waves-light" data-dismiss="modal">
+                        Crear
+                        servicio
+                    </button>
+
+                    <button type="button" class="btn btn-danger delete-event waves-effect waves-light" data-dismiss="modal">Eliminar</button>
+                </div>
             </div>
-            <!-- Modal Add Category -->
-            <div class="modal fade none-border" id="add-category">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title"><strong>Agregar categoria</strong></h4>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label class="control-label">Nombre de la categoria</label>
-                                        <input class="form-control form-white" placeholder="Ingresa el nombre" type="text" name="category-name">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="control-label">Selecciona la categoria por el color</label>
-                                        <select class="form-control form-white" data-placeholder="Elige el color..." name="category-color"
+        </div>
+    </div>
+    <!-- Modal Add Category -->
+    <div class="modal fade none-border" id="add-category">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title"><strong>Agregar categoria</strong></h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="control-label">Nombre de la categoria</label>
+                                <input class="form-control form-white" placeholder="Ingresa el nombre" type="text" name="category-name">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="control-label">Selecciona la categoria por el color</label>
+                                <select class="form-control form-white" data-placeholder="Elige el color..." name="category-color"
                                             <option value="pink">Mantenimiento</option>
                                             <option value="primary">Primera visita</option>
                                             <option value="warning">Inspecciones</option>
                                         </select>
-                                    </div>
-                                </div>
-                            </form>
+                            </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-danger waves-effect waves-light save-category" data-dismiss="modal">Salvar</button>
-                        </div>
-                    </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-danger waves-effect waves-light save-category" data-dismiss="modal">Salvar</button>
                 </div>
             </div>
         </div>
-
+    </div>
+</div>
     </div>
 
 <!--**********************************
     Content body end
 ***********************************-->
-
     </div>
 <!--**********************************
     Main wrapper end

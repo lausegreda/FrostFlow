@@ -2,6 +2,98 @@
     ViewData["Title"] = "RegistrarCotizacion";
 }
 
+<style>
+    .form-control {
+        font-size: 17px;
+    }
+
+    label {
+        display: inline-block;
+        margin-bottom: 0.5rem;
+        font-size: 18px;
+    }
+
+    .header-left .search_bar .search_icon i {
+        font-size: 25px;
+        color: #454545;
+    }
+
+    .stat-widget-one .stat-text {
+        font-size: 20px;
+        color: #868e96;
+    }
+
+    .header-right .nav-item .nav-link {
+        color: #464a53;
+        font-size: 28px;
+    }
+
+    .stat-widget-one .stat-digit {
+        font-size: 25px;
+        color: #373757;
+    }
+
+    .nav-label {
+        font-size: 18px;
+    }
+
+    .quixnav .metismenu > li > a {
+        font-size: 18px;
+        color: #BDBDB9;
+    }
+
+    .quixnav .metismenu > li.mm-active ul {
+        background-color: rgba(88, 115, 254, 0.04);
+        font-size: 16px;
+    }
+
+    .table thead th {
+        border-bottom-width: 1px;
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        border-color: #eaeaea;
+    }
+
+    .footer .copyright {
+        background-color: ##868e96; /* Color de fondo del pie de página */
+        font-size: 20px;
+        color: #373757;
+        text-align: center;
+        padding: 0.9375rem;
+        margin-top: auto;
+    }
+
+    .card-title {
+        font-size: 20px;
+        font-weight: 500;
+        color: #454545;
+        text-transform: capitalize;
+        letter-spacing: 0.05em;
+    }
+
+    .btn-primary {
+        color: #fff;
+        background-color: #593bdb;
+        border-color: #593bdb;
+        padding: 14px 11px;
+        font-size: 18px;
+    }
+
+    table thead th {
+        font-size: 18px;
+    }
+
+    table tbody td {
+        font-size: 16px;
+    }
+
+    table .form-control {
+        font-size: 16px;
+    }
+</style>
+
 <div class="card">
     <div class="card-header">
         <h4 class="card-title">Nueva Cotización</h4>
@@ -13,7 +105,7 @@
                     <div class="form-group col-md-6">
                         <label>Cliente</label>
                         <input type="text" class="form-control" placeholder="Empresa XYZ S.A.">
-                    </div>                    
+                    </div>
                     <div class="form-group col-md-6">
                         <label>Fecha</label>
                         <input type="date" class="form-control">
@@ -30,20 +122,20 @@
                         <label>Teléfonos</label>
                         <input type="text" class="form-control" placeholder="Teléfonos de Cliente">
                     </div>
-                        <div class="form-group col-md-6">
-                            <label>Moneda</label>
-                            <select id="inputState" class="form-control">
-                                <option selected>Seleccione</option>
-                                <option>¢</option>
-                                <option>$</option>
-                            </select>
-                        </div>
+                    <div class="form-group col-md-6">
+                        <label>Moneda</label>
+                        <select id="inputState" class="form-control">
+                            <option selected>Seleccione</option>
+                            <option>¢</option>
+                            <option>$</option>
+                        </select>
+                    </div>
                 </div>
             </form>
         </div>
     </div>
     <div class="card-header">
-        Detalle de la Cotización
+        <h4 class="card-title">Detalle de la Cotización</h4>
     </div>
     <div class="card-body">
         <table class="table">

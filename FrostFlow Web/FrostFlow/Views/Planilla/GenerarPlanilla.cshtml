@@ -2,6 +2,103 @@
     ViewData["Title"] = "GenerarPlanilla";
 }
 
+<style>
+    .form-control {
+        font-size: 17px;
+    }
+
+    label {
+        display: inline-block;
+        margin-bottom: 0.5rem;
+        font-size: 18px;
+    }
+
+    .header-left .search_bar .search_icon i {
+        font-size: 25px;
+        color: #454545;
+    }
+
+    .stat-widget-one .stat-text {
+        font-size: 20px;
+        color: #868e96;
+    }
+
+    .header-right .nav-item .nav-link {
+        color: #464a53;
+        font-size: 28px;
+    }
+
+    .stat-widget-one .stat-digit {
+        font-size: 25px;
+        color: #373757;
+    }
+
+    .nav-label {
+        font-size: 18px;
+    }
+
+    .quixnav .metismenu > li > a {
+        font-size: 18px;
+        color: #BDBDB9;
+    }
+
+    .quixnav .metismenu > li.mm-active ul {
+        background-color: rgba(88, 115, 254, 0.04);
+        font-size: 16px;
+    }
+
+    .table thead th {
+        border-bottom-width: 1px;
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        border-color: #eaeaea;
+    }
+
+    table.dataTable tbody tr, table.dataTable tbody td {
+        background: transparent !important;
+        color: #454545;
+    }
+
+    .footer .copyright {
+        background-color: ##868e96; /* Color de fondo del pie de página */
+        font-size: 20px;
+        color: #373757;
+        text-align: center;
+        padding: 0.9375rem;
+        margin-top: auto;
+    }
+
+    .card-title {
+        font-size: 20px;
+        font-weight: 500;
+        color: #454545;
+        text-transform: capitalize;
+        letter-spacing: 0.05em;
+    }
+
+    .btn-primary {
+        color: #fff;
+        background-color: #593bdb;
+        border-color: #593bdb;
+        padding: 14px 11px;
+        font-size: 18px;
+    }
+
+    table thead th {
+        font-size: 18px;
+    }
+
+    table tbody td {
+        font-size: 16px;
+    }
+
+    table .form-control {
+        font-size: 16px;
+    }
+</style>
+
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -221,7 +318,6 @@
                                 <td>3,990.00</td>
                                 <td>Pagada</td>
                             </tr>
-
                         </tbody>
                     </table>
                 </div>
@@ -229,219 +325,3 @@
         </div>
     </div>
 </div>
-
-
-@{
-    ViewData["Title"] = "GenerarPlanilla";
-}
-
-<div class="row">
-    <div class="col-12">
-        <div class="card">
-            <div class="card-header">
-                <h4 class="card-title">Planilla Quincenal</h4>
-            </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table id="example" class="display" style="min-width: 845px">
-                        <thead>
-                            <tr>
-                                <th>Nombre</th>
-                                <th>Puesto</th>
-                                <th>Fecha de inicio</th>
-                                <th>Fecha de fin</th>
-                                <th>Salario Bruto</th>
-                                <th>Deducciones</th>
-                                <th>Otros Ingresos</th>
-                                <th>Total a Pagar</th>
-                                <th>Estado</th>
-
-
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                            <tr>
-                                <td>María García</td>
-                                <td>Técnico de Soporte</td>
-                                <td>01/01/2024</td>
-                                <td>15/01/2024</td>
-                                <td>3,500.00</td>
-                                <td>500.00</td>
-                                <td>100.00</td>
-                                <td>3,100.00</td>
-                                <td>Pagada</td>
-                            </tr>
-                            <tr>
-                                <td>José Pérez</td>
-                                <td>Administrador de Sistemas</td>
-                                <td>01/01/2024</td>
-                                <td>15/01/2024</td>
-                                <td>4,000.00</td>
-                                <td>600.00</td>
-                                <td>150.00</td>
-                                <td>3,550.00</td>
-                                <td>No Pagada</td>
-                            </tr>
-                            <tr>
-                                <td>Carlos Gómez</td>
-                                <td>Chofer</td>
-                                <td>01/01/2024</td>
-                                <td>15/01/2024</td>
-                                <td>3,000.00</td>
-                                <td>400.00</td>
-                                <td>80.00</td>
-                                <td>2,680.00</td>
-                                <td>Pagada</td>
-                            </tr>
-                            <tr>
-                                <td>Ana López</td>
-                                <td>Personal Administrativo</td>
-                                <td>01/01/2024</td>
-                                <td>15/01/2024</td>
-                                <td>3,800.00</td>
-                                <td>550.00</td>
-                                <td>120.00</td>
-                                <td>3,370.00</td>
-                                <td>No Pagada</td>
-                            </tr>
-                            <tr>
-                                <td>Luis Hernández</td>
-                                <td>Técnico de Mantenimiento</td>
-                                <td>01/01/2024</td>
-                                <td>15/01/2024</td>
-                                <td>3,200.00</td>
-                                <td>450.00</td>
-                                <td>90.00</td>
-                                <td>2,840.00</td>
-                                <td>Pagada</td>
-                            </tr>
-                            <tr>
-                                <td>Andrea Martínez</td>
-                                <td>Analista de Datos</td>
-                                <td>01/01/2024</td>
-                                <td>15/01/2024</td>
-                                <td>4,200.00</td>
-                                <td>700.00</td>
-                                <td>180.00</td>
-                                <td>3,680.00</td>
-                                <td>No Pagada</td>
-                            </tr>
-                            <tr>
-                                <td>Ricardo Rodríguez</td>
-                                <td>Gerente de Proyectos</td>
-                                <td>01/01/2024</td>
-                                <td>15/01/2024</td>
-                                <td>5,500.00</td>
-                                <td>800.00</td>
-                                <td>200.00</td>
-                                <td>4,900.00</td>
-                                <td>Pagada</td>
-                            </tr>
-                            <tr>
-                                <td>Lorena Sánchez</td>
-                                <td>Asistente Administrativo</td>
-                                <td>01/01/2024</td>
-                                <td>15/01/2024</td>
-                                <td>3,400.00</td>
-                                <td>500.00</td>
-                                <td>110.00</td>
-                                <td>3,010.00</td>
-                                <td>No Pagada</td>
-                            </tr>
-                            <tr>
-                                <td>Juan Torres</td>
-                                <td>Operador de Maquinaria</td>
-                                <td>01/01/2024</td>
-                                <td>15/01/2024</td>
-                                <td>3,100.00</td>
-                                <td>400.00</td>
-                                <td>85.00</td>
-                                <td>2,785.00</td>
-                                <td>Pagada</td>
-                            </tr>
-                            <tr>
-                                <td>Carolina López</td>
-                                <td>Recepcionista</td>
-                                <td>01/01/2024</td>
-                                <td>15/01/2024</td>
-                                <td>2,900.00</td>
-                                <td>350.00</td>
-                                <td>75.00</td>
-                                <td>2,625.00</td>
-                                <td>Pagada</td>
-                            </tr>
-                            <tr>
-                                <td>Pablo Ruiz</td>
-                                <td>Encargado de Almacén</td>
-                                <td>01/01/2024</td>
-                                <td>15/01/2024</td>
-                                <td>3,600.00</td>
-                                <td>600.00</td>
-                                <td>130.00</td>
-                                <td>3,130.00</td>
-                                <td>No Pagada</td>
-                            </tr>
-                            <tr>
-                                <td>Elena González</td>
-                                <td>Contador</td>
-                                <td>01/01/2024</td>
-                                <td>15/01/2024</td>
-                                <td>4,800.00</td>
-                                <td>750.00</td>
-                                <td>220.00</td>
-                                <td>4,270.00</td>
-                                <td>Pagada</td>
-                            </tr>
-                            <tr>
-                                <td>Miguel Díaz</td>
-                                <td>Analista de Marketing</td>
-                                <td>01/01/2024</td>
-                                <td>15/01/2024</td>
-                                <td>4,300.00</td>
-                                <td>650.00</td>
-                                <td>170.00</td>
-                                <td>3,820.00</td>
-                                <td>No Pagada</td>
-                            </tr>
-                            <tr>
-                                <td>Isabel Fernández</td>
-                                <td>Asistente de Recursos Humanos</td>
-                                <td>01/01/2024</td>
-                                <td>15/01/2024</td>
-                                <td>3,700.00</td>
-                                <td>550.00</td>
-                                <td>140.00</td>
-                                <td>3,290.00</td>
-                                <td>Pagada</td>
-                            </tr>
-                            <tr>
-                                <td>Pedro Martín</td>
-                                <td>Operario de Producción</td>
-                                <td>01/01/2024</td>
-                                <td>15/01/2024</td>
-                                <td>3,000.00</td>
-                                <td>450.00</td>
-                                <td>95.00</td>
-                                <td>2,645.00</td>
-                                <td>No Pagada</td>
-                            </tr>
-                            <tr>
-                                <td>Valeria Torres</td>
-                                <td>Analista de Finanzas</td>
-                                <td>01/01/2024</td>
-                                <td>15/01/2024</td>
-                                <td>4,500.00</td>
-                                <td>700.00</td>
-                                <td>190.00</td>
-                                <td>3,990.00</td>
-                                <td>Pagada</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-

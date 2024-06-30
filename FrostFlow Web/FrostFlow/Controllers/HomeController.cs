@@ -81,6 +81,13 @@ namespace FrostFlow.Controllers
         }
 
         [HttpGet]
+        public IActionResult PasswordFormulario()
+        {
+            //HttpContext.Session.Clear();
+            return View();
+        }
+
+        [HttpGet]
         public IActionResult Calendario()
         {
             return View();
