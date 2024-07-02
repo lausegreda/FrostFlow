@@ -14,13 +14,6 @@ namespace FrostFlow.Controllers
             return View();
         }
 
-        [HttpGet]
-        public IActionResult ConsultarCliente()
-        {
-            return View();
-        }
-
-
         [HttpPost]
         public IActionResult RegistrarCliente(Cliente entidad)
         {
@@ -28,7 +21,6 @@ namespace FrostFlow.Controllers
 
             if (resp?.Codigo == "00")
             {
-                TempData["SuccessMessage"] = "Cliente creado con éxito.";
                 return RedirectToAction("ListadoClientes", "Cliente");
             }
             else
@@ -52,16 +44,14 @@ namespace FrostFlow.Controllers
             }
         }
 
-        [HttpGet]
-        public IActionResult EliminarCliente(int id_cliente)
+        [HttpPost]
+        public IActionResult EliminarCliente(Cliente entidad)
         {
-            var entidad = new Cliente();
-            entidad.id_cliente = id_cliente;
+            var resp = _clienteModel.EliminarCliente(entidad.id_cliente);
 
-            var resp = _clienteModel.EliminarCliente(entidad);
             if (resp?.Codigo == "00")
             {
-                return Ok();
+                return RedirectToAction("ListadoClientes", "Cliente");
             }
             else
             {

@@ -30,31 +30,31 @@ namespace FrostFlow_API.Controllers
                     respuesta.Codigo = "-1";
                     respuesta.Mensaje = "El Cliente ya se encuentra registrado";
                 }
+
                 return Ok(respuesta);
 
 
             }
         }
 
-        [Route("ListadoClientes")]
-        [HttpGet]
+        [HttpGet("ListadoClientes")]
         public IActionResult ListadoClientes()
         {
             using (var db = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
             {
-                ClienteRespuesta respuesta = new ClienteRespuesta();
+                var respuesta = new ClienteRespuesta();
 
                 var result = db.Query<Cliente>("ListadoClientes",
-                    new { },
-                    commandType: CommandType.StoredProcedure).ToList();
+                    commandType: CommandType.StoredProcedure).AsList();
 
-                if (result == null)
+                if (result.Count == 0)
                 {
                     respuesta.Codigo = "-1";
                     respuesta.Mensaje = "No hay clientes existentes.";
                 }
                 else
                 {
+                    respuesta.Codigo = "00";
                     respuesta.Datos = result;
                 }
 
@@ -63,25 +63,25 @@ namespace FrostFlow_API.Controllers
         }
 
         [Route("EliminarCliente")]
-        [HttpPut]
-        public IActionResult EliminarCliente(Cliente entidad)
+        [HttpDelete]
+        public IActionResult EliminarCliente(int id_cliente)
         {
             using (var db = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
             {
-                ClienteRespuesta respuesta = new ClienteRespuesta();
+                UsuarioRespuesta respuesta = new UsuarioRespuesta();
 
-                var result = db.Query<Cliente>("EliminarCliente",
-                    new { entidad.id_cliente },
-                    commandType: CommandType.StoredProcedure).FirstOrDefault();
+                var result = db.Execute("EliminarCliente",
+                    new { id_cliente },
+                    commandType: CommandType.StoredProcedure);
 
-                if (result == null)
+                if (result <= 0)
                 {
                     respuesta.Codigo = "-1";
-                    respuesta.Mensaje = "No se ha podido eliminar el cliente.";
+                    respuesta.Mensaje = "No se pudo eliminar el cliente, intente nuevamente.";
                 }
                 else
                 {
-                    respuesta.Mensaje = "Cliente eliminado";
+                    respuesta.Codigo = "00";
                 }
 
                 return Ok(respuesta);
@@ -105,6 +105,7 @@ namespace FrostFlow_API.Controllers
                     respuesta.Codigo = "-1";
                     respuesta.Mensaje = "No se pudo actualizar el cliente";
                 }
+
                 return Ok(respuesta);
             }
         }

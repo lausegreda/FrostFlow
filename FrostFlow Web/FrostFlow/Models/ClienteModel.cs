@@ -45,23 +45,24 @@ namespace FrostFlow.Models
             return null;
         }
 
-        public ClienteRespuesta EliminarCliente(Cliente entidad)
+        public ClienteRespuesta EliminarCliente(int id_cliente)
         {
-            string url = _configuration.GetSection("settings:UrlApi").Value + "api/Cliente/EliminarCliente";
-            _http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _sesion.HttpContext?.Session.GetString("Token"));
-            JsonContent body = JsonContent.Create(entidad);
-            var resp = _http.PutAsync(url, body).Result;
+            string url = _configuration.GetSection("settings:UrlApi").Value + "api/Usuario/EliminarCliente?id_cliente=" + id_cliente;
+            var resp = _http.DeleteAsync(url).Result;
 
             if (resp.IsSuccessStatusCode)
-                return resp.Content.ReadFromJsonAsync<ClienteRespuesta>().Result;
+            {
+                var result = resp.Content.ReadFromJsonAsync<ClienteRespuesta>().Result;
+                return result;
+            }
 
             return null;
         }
 
         public ClienteRespuesta ModificarCliente(Cliente entidad)
         {
-            string url = _configuration.GetSection("settings:UrlApi").Value + "api/Cliente/ModificarCliente";
-            _http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _sesion.HttpContext?.Session.GetString("Token"));
+            string url = _configuration.GetSection("settings:UrlApi").Value + "api/Usuario/ModificarCliente";
+            //_http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _sesion.HttpContext?.Session.GetString("Token"));
             JsonContent body = JsonContent.Create(entidad);
             var resp = _http.PutAsync(url, body).Result;
 

@@ -13,7 +13,7 @@
     {
         public ClienteRespuesta()
         {
-            Codigo = "1";
+            Codigo = "00";
             Mensaje = string.Empty;
             Dato = null;
             Datos = null;
